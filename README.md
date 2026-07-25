@@ -169,7 +169,7 @@ overridable in the corresponding shell scripts.
 
 ## Data on Zenodo
 
-The large pipeline archive is available on Zenodo: [doi:10.5281/zenodo.21573037](https://doi.org/10.5281/zenodo.21573037).
+Files produced during the pipeline are available on Zenodo: [doi:10.5281/zenodo.21573037](https://doi.org/10.5281/zenodo.21573037).
 
 GitHub contains scripts, documentation, small search inputs, curation tables, the verified primary phylogeny, and the extended superfamily-alignment materials. Larger search, family-processing, and supporting outputs are archived on Zenodo.
 
