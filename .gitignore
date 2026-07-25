@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+
+# HPC logs
+*.out
+*.err
+slurm-*.out
+
+# MMseqs2 databases and temporary workspaces
+tmp/
+*_db
+*_db.*
+*.dbtype
+*.index
+*.lookup
+
+# Large/generated analysis products (distributed through Zenodo)
+search_results/
+results/
+families/
+gene_lists/
+cluster_files/
+accession_txt/
+reference_data/
+public/mappings/
+*.m8
+*.tree
+*.html
+*.raxml.*
+
+# Verified primary phylogeny and extended-alignment outputs are intentionally included.
+!code_and_data/phylogeny/data/trees/
+!code_and_data/phylogeny/data/trees/**
+!code_and_data/superfamily_alignment/data/trees/
+!code_and_data/superfamily_alignment/data/trees/**
+
+# OS/editor files
+.DS_Store
+Thumbs.db

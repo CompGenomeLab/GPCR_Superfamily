@@ -1,0 +1,148 @@
+
+RAxML-NG v. 1.2.2-master released on 30.04.2024 by The Exelixis Lab.
+Developed by: Alexey M. Kozlov and Alexandros Stamatakis.
+Contributors: Diego Darriba, Tomas Flouri, Benoit Morel, Sarah Lutteropp, Ben Bettisworth, Julia Haag, Anastasis Togkousidis.
+Latest version: https://github.com/amkozlov/raxml-ng
+Questions/problems/suggestions? Please visit: https://groups.google.com/forum/#!forum/raxml
+
+System: Intel(R) Xeon(R) Gold 6148 CPU @ 2.40GHz, 40 cores, 187 GB RAM (allocated: 20 physical cores)
+
+RAxML-NG was called at 25-Oct-2025 14:22:26 as follows:
+
+/users/PAS1794/bselcuk/Desktop/raxml-ng/raxml-ng --search --tree pars{20} --msa /users/PAS1794/bselcuk/Desktop/gpcr_superfamily/families/superfamily/All_clust0.7_cov1_Oct25_minsize2/All_clust0.7_cov1_Oct25_minsize2_linsi_ep0.123_trimends_kpicgappy.fasta --model JTT+FO+R8 --threads 40 --workers AUTO --prefix /users/PAS1794/bselcuk/Desktop/gpcr_superfamily/families/superfamily/All_clust0.7_cov1_Oct25_minsize2/All_clust0.7_cov1_Oct25_minsize2_linsi_ep0.123_trimends_kpicgappy
+
+Analysis options:
+  run mode: ML tree search
+  start tree(s): parsimony (20)
+  random seed: 1761416546
+  tip-inner: OFF
+  pattern compression: ON
+  per-rate scalers: OFF
+  site repeats: ON
+  logLH epsilon: general: 10.000000, brlen-triplet: 1000.000000
+  fast spr radius: AUTO
+  spr subtree cutoff: 1.000000
+  fast CLV updates: ON
+  branch lengths: proportional (ML estimate, algorithm: NR-FAST)
+  SIMD kernels: AVX2
+  parallelization: coarse-grained (auto), PTHREADS (40 threads), thread pinning: OFF
+
+[00:00:00] Reading alignment from file: /users/PAS1794/bselcuk/Desktop/gpcr_superfamily/families/superfamily/All_clust0.7_cov1_Oct25_minsize2/All_clust0.7_cov1_Oct25_minsize2_linsi_ep0.123_trimends_kpicgappy.fasta
+[00:00:00] Loaded alignment with 550 taxa and 406 sites
+
+Alignment comprises 1 partitions and 406 patterns
+
+Partition 0: noname
+Model: JTT+FO+R8
+Alignment sites / patterns: 406 / 406
+Gaps: 31.53 %
+Invariant sites: 0.00 %
+
+
+NOTE: Binary MSA file created: /users/PAS1794/bselcuk/Desktop/gpcr_superfamily/families/superfamily/All_clust0.7_cov1_Oct25_minsize2/All_clust0.7_cov1_Oct25_minsize2_linsi_ep0.123_trimends_kpicgappy.raxml.rba
+
+Parallelization scheme autoconfig: 10 worker(s) x 4 thread(s)
+
+[00:00:00] Generating 20 parsimony starting tree(s) with 550 taxa
+Parallel parsimony with 40 threads
+Parallel reduction/worker buffer size: 1 KB  / 0 KB
+
+[00:00:00] Data distribution: max. partitions/sites/weight per thread: 1 / 102 / 16320
+[00:00:00] Data distribution: max. searches per worker: 2
+
+Starting ML tree search with 20 distinct starting trees
+
+[00:00:01 -329538.607620] Initial branch length optimization
+[00:00:06 -311205.369580] Model parameter optimization (eps = 10.000000)
+[00:05:20 -302643.352334] AUTODETECT spr round 1 (radius: 5)
+[00:05:37 -300492.919021] AUTODETECT spr round 2 (radius: 10)
+[00:06:30 -300269.340079] AUTODETECT spr round 3 (radius: 15)
+[00:08:30 -300268.427338] AUTODETECT spr round 4 (radius: 20)
+[00:11:50 -300268.256472] AUTODETECT spr round 5 (radius: 25)
+[00:15:29 -300268.218923] SPR radius for FAST iterations: 20 (autodetect)
+[00:15:29 -300268.218923] Model parameter optimization (eps = 3.000000)
+[00:17:31 -300259.373503] FAST spr round 1 (radius: 20)
+[00:21:05 -300041.020056] FAST spr round 2 (radius: 20)
+[00:23:09 -300007.848317] FAST spr round 3 (radius: 20)
+[00:24:22 -300004.090771] Model parameter optimization (eps = 1.000000)
+[00:25:09 -300003.486553] SLOW spr round 1 (radius: 5)
+[00:26:18 -299967.512679] SLOW spr round 2 (radius: 5)
+[00:27:14 -299944.981738] SLOW spr round 3 (radius: 5)
+[00:28:00 -299939.997908] SLOW spr round 4 (radius: 10)
+[00:28:41 -299936.808231] SLOW spr round 5 (radius: 15)
+[00:31:04 -299936.780625] SLOW spr round 6 (radius: 20)
+[00:34:39 -299936.780275] SLOW spr round 7 (radius: 25)
+[00:34:42] [worker #3] ML tree search #4, logLikelihood: -299960.210763
+[00:34:43] [worker #7] ML tree search #8, logLikelihood: -299945.494251
+[00:37:52] [worker #1] ML tree search #2, logLikelihood: -299930.223380
+[00:38:47 -299936.780267] Model parameter optimization (eps = 0.100000)
+[00:39:35] [worker #6] ML tree search #7, logLikelihood: -299958.165786
+
+[00:39:40] [worker #0] ML tree search #1, logLikelihood: -299936.289314
+
+[00:39:40 -329458.428118] Initial branch length optimization
+[00:39:44 -311267.346175] Model parameter optimization (eps = 10.000000)
+[00:40:59] [worker #4] ML tree search #5, logLikelihood: -299924.683844
+[00:41:28] [worker #8] ML tree search #9, logLikelihood: -299943.301839
+[00:41:36] [worker #9] ML tree search #10, logLikelihood: -299933.119705
+[00:42:13] [worker #5] ML tree search #6, logLikelihood: -299933.778199
+[00:42:47] [worker #2] ML tree search #3, logLikelihood: -299919.337539
+[00:45:42 -302786.086261] AUTODETECT spr round 1 (radius: 5)
+[00:46:00 -300578.165015] AUTODETECT spr round 2 (radius: 10)
+[00:46:52 -300300.205344] AUTODETECT spr round 3 (radius: 15)
+[00:48:53 -300294.279537] AUTODETECT spr round 4 (radius: 20)
+[00:52:06 -300293.902318] AUTODETECT spr round 5 (radius: 25)
+[00:55:35 -300293.825062] SPR radius for FAST iterations: 20 (autodetect)
+[00:55:35 -300293.825062] Model parameter optimization (eps = 3.000000)
+[00:57:08 -300290.421165] FAST spr round 1 (radius: 20)
+[01:00:36 -300033.415401] FAST spr round 2 (radius: 20)
+[01:02:37 -300002.561680] FAST spr round 3 (radius: 20)
+[01:03:50 -299989.193181] FAST spr round 4 (radius: 20)
+[01:04:38 -299984.278069] Model parameter optimization (eps = 1.000000)
+[01:05:34 -299983.693166] SLOW spr round 1 (radius: 5)
+[01:06:40 -299932.349707] SLOW spr round 2 (radius: 5)
+[01:07:30 -299927.214749] SLOW spr round 3 (radius: 10)
+[01:08:13 -299924.894609] SLOW spr round 4 (radius: 15)
+[01:10:41 -299924.855505] SLOW spr round 5 (radius: 20)
+[01:14:25] [worker #3] ML tree search #14, logLikelihood: -299939.739571
+[01:14:27 -299924.854465] SLOW spr round 6 (radius: 25)
+[01:18:36] [worker #7] ML tree search #18, logLikelihood: -299933.965252
+[01:18:41 -299924.854437] Model parameter optimization (eps = 0.100000)
+[01:19:15] [worker #1] ML tree search #12, logLikelihood: -299936.403607
+
+[01:19:30] [worker #0] ML tree search #11, logLikelihood: -299924.707103
+
+[01:21:04] [worker #9] ML tree search #20, logLikelihood: -299919.682535
+[01:21:25] [worker #5] ML tree search #16, logLikelihood: -299922.275083
+[01:22:43] [worker #6] ML tree search #17, logLikelihood: -299936.427417
+[01:23:00] [worker #4] ML tree search #15, logLikelihood: -299926.552380
+[01:24:24] [worker #2] ML tree search #13, logLikelihood: -299939.811912
+[01:25:05] [worker #8] ML tree search #19, logLikelihood: -299914.341166
+
+Optimized model parameters:
+
+   Partition 0: noname
+   Rate heterogeneity: FREE (8 cats, mean),  weights&rates: (0.027690,0.039754) (0.009897,0.181136) (0.044460,0.330807) (0.069587,0.470531) (0.194282,0.714383) (0.246684,0.943218) (0.276899,1.231863) (0.130501,1.816737) 
+   Base frequencies (ML): 0.074263 0.039010 0.032880 0.029833 0.029073 0.030088 0.035648 0.059823 0.019403 0.085509 0.121634 0.035952 0.026560 0.075791 0.024057 0.072212 0.056217 0.028684 0.043857 0.079507 
+   Substitution rates (model): 58.000000 54.000000 81.000000 56.000000 57.000000 105.000000 179.000000 27.000000 36.000000 30.000000 35.000000 54.000000 15.000000 194.000000 378.000000 475.000000 9.000000 11.000000 298.000000 45.000000 16.000000 113.000000 310.000000 29.000000 137.000000 328.000000 22.000000 38.000000 646.000000 44.000000 5.000000 74.000000 101.000000 64.000000 126.000000 20.000000 17.000000 528.000000 34.000000 86.000000 58.000000 81.000000 391.000000 47.000000 12.000000 263.000000 30.000000 10.000000 15.000000 503.000000 232.000000 8.000000 70.000000 16.000000 10.000000 49.000000 767.000000 130.000000 112.000000 11.000000 7.000000 26.000000 15.000000 4.000000 15.000000 59.000000 38.000000 4.000000 46.000000 31.000000 9.000000 5.000000 59.000000 69.000000 17.000000 23.000000 7.000000 31.000000 78.000000 14.000000 223.000000 42.000000 115.000000 209.000000 62.000000 323.000000 26.000000 597.000000 9.000000 72.000000 292.000000 43.000000 4.000000 164.000000 53.000000 51.000000 18.000000 24.000000 20.000000 119.000000 26.000000 12.000000 9.000000 181.000000 18.000000 5.000000 18.000000 30.000000 32.000000 10.000000 7.000000 45.000000 23.000000 6.000000 6.000000 27.000000 14.000000 5.000000 24.000000 201.000000 33.000000 55.000000 8.000000 47.000000 16.000000 56.000000 45.000000 33.000000 40.000000 115.000000 73.000000 46.000000 8.000000 573.000000 11.000000 229.000000 21.000000 479.000000 89.000000 10.000000 40.000000 245.000000 9.000000 32.000000 961.000000 14.000000 388.000000 248.000000 102.000000 59.000000 25.000000 52.000000 24.000000 180.000000 65.000000 4.000000 21.000000 47.000000 103.000000 10.000000 8.000000 14.000000 43.000000 16.000000 29.000000 226.000000 24.000000 18.000000 323.000000 17.000000 92.000000 12.000000 53.000000 536.000000 62.000000 285.000000 118.000000 6.000000 10.000000 23.000000 477.000000 35.000000 63.000000 38.000000 12.000000 21.000000 112.000000 71.000000 25.000000 16.000000 
+
+
+Final LogLikelihood: -299914.341166
+
+AIC score: 602088.682331 / AICc score: 3158148.682331 / BIC score: 606615.861401
+Free parameters (model + branch lengths): 1130
+
+WARNING: Number of free parameters (K=1130) is larger than alignment size (n=406).
+         This might lead to overfitting and compromise tree inference results!
+
+
+Best ML tree saved to: /users/PAS1794/bselcuk/Desktop/gpcr_superfamily/families/superfamily/All_clust0.7_cov1_Oct25_minsize2/All_clust0.7_cov1_Oct25_minsize2_linsi_ep0.123_trimends_kpicgappy.raxml.bestTree
+All ML trees saved to: /users/PAS1794/bselcuk/Desktop/gpcr_superfamily/families/superfamily/All_clust0.7_cov1_Oct25_minsize2/All_clust0.7_cov1_Oct25_minsize2_linsi_ep0.123_trimends_kpicgappy.raxml.mlTrees
+Optimized model saved to: /users/PAS1794/bselcuk/Desktop/gpcr_superfamily/families/superfamily/All_clust0.7_cov1_Oct25_minsize2/All_clust0.7_cov1_Oct25_minsize2_linsi_ep0.123_trimends_kpicgappy.raxml.bestModel
+
+Execution log saved to: /users/PAS1794/bselcuk/Desktop/gpcr_superfamily/families/superfamily/All_clust0.7_cov1_Oct25_minsize2/All_clust0.7_cov1_Oct25_minsize2_linsi_ep0.123_trimends_kpicgappy.raxml.log
+
+Analysis started: 25-Oct-2025 14:22:26 / finished: 25-Oct-2025 15:47:31
+
+Elapsed time: 5105.739 seconds
+

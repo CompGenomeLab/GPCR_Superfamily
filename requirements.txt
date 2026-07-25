@@ -1,0 +1,9 @@
+biopython
+ete3
+numpy
+pandas
+plotly
+
+# Optional: only needed by phylogeny/MSA_to_svg_and_pdf.py
+reportlab
+svglib
