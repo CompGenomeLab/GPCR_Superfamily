@@ -1,4 +1,4 @@
-"""Shared-motif evidence per family for Fig. 6 (motif columns) and Fig. S3 : writes motif_evidence_data.js.
+"""Shared-motif evidence per family for Fig. 6 (motif columns): writes motif_evidence_data.js.
 
 One set of criteria, applied the same way to every family and motif (Oct 16):
   sequence  = conserved (>= 60%, Table S8 '*') with a residue of the motif's type; at the two I/V/L columns (3x54,
@@ -11,8 +11,7 @@ One set of criteria, applied the same way to every family and motif (Oct 16):
   STE2 is the one exception: its sequence matches are not counted either, because in both STE2 structures its
               residues at these positions lie 4-17 A from the shared sites (alignment artifacts, as in the Results).
   evidence  = both | sequence (only) | structure (only) | none
-Fig. S3 shows every shared motif grouped by the lineages that share it; Fig. 6 shows the same cells in sequence order,
-without R/K12x51 (no common structural site).
+Fig. 6 shows the cells in sequence order, without R/K12x51 (no common structural site).
 
     python build_motif_evidence.py
 """

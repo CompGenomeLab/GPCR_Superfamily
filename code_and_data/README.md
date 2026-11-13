@@ -17,7 +17,7 @@ the method, the scripts in the order they run, and the archive files.
 | [`08_superfamily_alignment/`](08_superfamily_alignment/README.md) | Superfamily Alignment | eight superfamily alignments |
 | [`09_superfamily_phylogeny/`](09_superfamily_phylogeny/README.md) | Phylogenetic Inference of the GPCR Superfamily Hierarchy | eight ML trees, support, Tables S6-S7 |
 | [`10_motif_analysis/`](10_motif_analysis/README.md) | Tree-Guided Superfamily Alignment | family-column mapping, logos, motif positions, Figure 4, Tables S8-S9 |
-| [`11_structure_superposition/`](11_structure_superposition/README.md) | Superimposition of Identified Motifs | Figures 5 and 6, Fig. S3, Table S10 |
+| [`11_structure_superposition/`](11_structure_superposition/README.md) | Superimposition of Identified Motifs | Figures 5 and 6, Table S10 |
 | [`supplementary_tables/`](supplementary_tables/README.md) | | Tables S1-S10 and the supplementary-figure document |
 
 Shell scripts marked as cluster jobs are SLURM arrays and source `config/paths.sh`; everything else

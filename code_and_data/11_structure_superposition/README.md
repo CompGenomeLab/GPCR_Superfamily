@@ -1,6 +1,6 @@
 # 11 · Structural superimposition of the shared motifs
 
-Methods: *Superimposition of Identified Motifs*; Figures 5 and 6; Fig. S3; Table S10.
+Methods: *Superimposition of Identified Motifs*; Figures 5 and 6; Table S10.
 
 One structure per family is used: the experimental structure where one exists, otherwise the AlphaFold
 model of the family member carrying the most motif residues (`model_candidates.py`, `af_confidence.py`),
@@ -17,12 +17,11 @@ per motif (`fig4_panels/`), `build_fig5_layout_tool.py` writes a page for placin
 (`fig4_layout.json`), `make_fig5.py` assembles Figure 5 from them, and `save_fig4_session.py` saves the
 PyMOL session of the figure.
 
-`figures/build_motif_evidence.py` applies the fixed rules of Figure 6 and Fig. S3 (sequence: conserved by
+`figures/build_motif_evidence.py` applies the fixed rules of Figure 6 (sequence: conserved by
 the 60% rule, I+V+L together at 3x54 and 5x65, any kingdom for cAMP and Class C; structure: within 2 Å
 of the centroid of the other carriers or at most 1 Å beyond the local backbone displacement, any carrier
 at C45x50; STE2 a control only) to Tables S8 and S10b, and writes `motif_evidence_data.js`, which
-`fig6_hierarchy.html` (Figure 6) and `figS3_motif_evidence.html` (Fig. S3) draw. Open them in a browser;
-both have a "Download SVG" button.
+`fig6_hierarchy.html` (Figure 6) draws. Open it in a browser; it has a "Download SVG" button.
 
 ```bash
 python final_motif_list.py

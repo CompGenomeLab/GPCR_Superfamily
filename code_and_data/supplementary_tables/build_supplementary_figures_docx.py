@@ -20,7 +20,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from gpcr_paths import stage  # noqa: E402
 HERE = Path(__file__).resolve().parent
 FIG = stage("supplementary_figures")
-FIGURES = ["S1", "S2", "S3", "S4"]
+FIGURES = ["S1", "S2", "S3"]
 
 
 def legends():

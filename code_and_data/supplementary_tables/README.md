@@ -23,9 +23,8 @@ python build_xlsx.py
 ```
 
 Supplementary figures (`supplementary_figures/` in the archive, legends in
-`supplementary_figure_legends.md`): Figs. S1 and S4 are exports of gpcrevolution.org/taxonomic-distribution,
+`supplementary_figure_legends.md`): Figs. S1 and S3 are exports of gpcrevolution.org/taxonomic-distribution,
 before and after the reassignment of Dikarya Class A sequences to GPR1;
 Fig. S2 is the superfamily-logo export with the default guide tree, cropped to the TM5 prolines by
-`make_figS2.py` (`crop_logo_svg.py`); Fig. S3 is `../11_structure_superposition/figures/figS3_motif_evidence.html`
-exported by `make_figS3.py`. `build_supplementary_figures_docx.py` assembles `Supplementary_Figures.docx`.
+`make_figS2.py` (`crop_logo_svg.py`). `build_supplementary_figures_docx.py` assembles `Supplementary_Figures.docx`.
 The two export scripts rasterize SVGs with headless Chrome (set `CHROME` to its path).
