@@ -5,8 +5,7 @@ comparison with published classifications, the inference of family origins, the 
 the shared sequence motifs and their structural test.
 
 The data every stage reads and writes are in the accompanying Zenodo archive,
-[doi:10.5281/zenodo.21573036](https://doi.org/10.5281/zenodo.21573036) (this DOI always resolves to the
-latest version; this code goes with version 2, November 2026). Interactive versions of the figures are on
+[doi:10.5281/zenodo.21573036](https://doi.org/10.5281/zenodo.21573036). Interactive versions of the figures are on
 [gpcrevolution.org](https://gpcrevolution.org): the family taxonomic distribution, the superfamily trees
 and the superfamily logo.
 
