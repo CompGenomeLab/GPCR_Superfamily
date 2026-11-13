@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Figure 7 draft: molecular definition of the GPCR superfamily</title>
+<style>
+  body { font-family: Arial, sans-serif; margin: 20px; background: #fff; color: #222; }
+  .bar { margin-bottom: 10px; font-size: 13px; }
+  button { font-family: Arial; font-size: 12px; padding: 4px 10px; }
+  svg text { font-family: Arial, sans-serif; }
+</style>
+<!-- data: regenerate with `python build_motif_evidence.py` (Tables S7 and S9b) -->
+<script src="motif_evidence_data.js"></script>
+</head>
+<body>
+<div class="bar">
+  <button id="dl">Download SVG</button>
+  <span style="color:#666;margin-left:10px">Layout and wording: STYLE block below; data: motif_evidence_data.js.</span>
+</div>
+<div id="fig"></div>
+
+<script>
+/* ===================== STYLE (edit here) ===================== */
+const STYLE = {
+  title: "Shared motifs that define the GPCR superfamily",
+  /* identical to the structure figure (Fig. 5, step12 make_fig4.py); grey = the Fig. 5 helix grey */
+  colours: { Glu: "#E2BB94", cAMP: "#BCBCFA", Rho: "#F99696", none: "#B4B4B4" },
+  /* motif group headers: bands in the colours of the lineages that share the group */
+  groupLineages: { "All three lineages": ["Rho", "cAMP", "Glu"], "cAMP- and Rhodopsin-related": ["cAMP", "Rho"],
+                   "Glutamate- and cAMP-related": ["Glu", "cAMP"] },
+  lineageNames: { Rho: "Rhodopsin-related", cAMP: "cAMP-related", Glu: "Glutamate-related", none: "outside" },
+  cell: 26, rowH: 21, labelW: 190, placedW: 46, top: 150, left: 20,
+  legend: [
+    ["both", "sequence and structure"],
+    ["sequence", "sequence only"],
+    ["structure", "structure only"],
+    [null, "neither"]
+  ]
+};
+
+/* ===================== DRAWING ===================== */
+const NS = "http://www.w3.org/2000/svg", S = STYLE, D = FIG7;
+const nM = D.motifs.length;
+const gridX = S.left + S.labelW + S.placedW + 10;
+const W = gridX + nM * S.cell + 30;
+const H = S.top + D.rows.length * S.rowH + 120;
+const svg = document.createElementNS(NS, "svg");
+svg.setAttribute("xmlns", NS); svg.setAttribute("width", W); svg.setAttribute("height", H);
+svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+const el = (tag, a, p = svg) => { const e = document.createElementNS(NS, tag); for (const k in a) e.setAttribute(k, a[k]); p.appendChild(e); return e; };
+const text = (x, y, s, a = {}) => { const t = el("text", { x, y, "font-size": 12, ...a }); t.textContent = s; return t; };
+
+text(S.left, 20, S.title, { "font-size": 14, "font-weight": "bold" });
+
+// motif group headers and motif labels
+let start = 0;
+D.motifs.forEach((m, i) => {
+  const last = i === nM - 1 || D.motifs[i + 1].group !== m.group;
+  if (last) {
+    const x0 = gridX + start * S.cell, x1 = gridX + (i + 1) * S.cell;
+    const lins = S.groupLineages[m.group], w = (x1 - x0 - 2) / lins.length;
+    lins.forEach((k, q) => el("rect", { x: x0 + 1 + q * w, y: 36, width: w, height: 18, fill: S.colours[k] }));
+    text((x0 + x1) / 2, 49, m.group, { "font-size": 9.5, fill: "#222", "text-anchor": "middle" });
+    start = i + 1;
+  }
+  const x = gridX + i * S.cell + S.cell / 2, y = S.top - 8;
+  gpcrdb(text(x, y, "", { "font-size": 10.5, transform: `rotate(-60 ${x} ${y})` }), m.label);
+});
+text(S.left + S.labelW + S.placedW / 2, S.top - 8, "stable in trees", { "font-size": 10, "text-anchor": "start",
+  transform: `rotate(-60 ${S.left + S.labelW + S.placedW / 2} ${S.top - 8})` });
+
+// rows
+D.rows.forEach((r, j) => {
+  const y = S.top + j * S.rowH, cy = y + S.rowH / 2;
+  el("rect", { x: S.left, y: y + 1, width: 6, height: S.rowH - 2, fill: S.colours[r.lineage] });
+  text(S.left + 12, cy + 4, r.label, { "font-size": 11.5, ...(r.label.includes("plants") ? { "font-style": "italic" } : {}) });
+  // tree placement
+  const px = S.left + S.labelW + S.placedW / 2;
+  if (r.placed === true) el("circle", { cx: px, cy, r: 4.5, fill: "#333" });
+  else if (r.placed === false) el("circle", { cx: px, cy, r: 4.5, fill: "#fff", stroke: "#333", "stroke-width": 1.2 });
+  else text(px, cy + 4, "via family", { "font-size": 8.5, fill: "#777", "text-anchor": "middle" });
+  // motif cells
+  r.cells.forEach((c, i) => draw(c.ev, gridX + i * S.cell + S.cell / 2, cy, c.note));
+  if (j < D.rows.length - 1 && D.rows[j + 1].lineage !== r.lineage)
+    el("line", { x1: S.left, x2: W - 20, y1: y + S.rowH, y2: y + S.rowH, stroke: "#bbb", "stroke-width": 0.8 });
+});
+
+// GPCRdb label: "_X" becomes the class letter as a capital subscript
+function gpcrdb(t, label) {
+  label.split(/(_[A-Z])/).forEach(part => {
+    if (!part) return;
+    const sp = document.createElementNS(NS, "tspan");
+    if (part[0] === "_") { sp.setAttribute("baseline-shift", "sub"); sp.setAttribute("font-size", "75%"); sp.textContent = part[1]; }
+    else sp.textContent = part;
+    t.appendChild(sp);
+  });
+  return t;
+}
+
+// same symbols as the Fig. 6 motif columns: full = sequence and structure, left half = sequence only,
+// right half = structure only, small grey dot = neither
+function draw(kind, cx, cy, tip) {
+  let g;
+  const r = 6.5;
+  if (kind === "both") g = el("circle", { cx, cy, r, fill: "#222", stroke: "#222", "stroke-width": 1.3 });
+  else if (kind === "sequence" || kind === "structure") {
+    g = el("g", {});
+    el("circle", { cx, cy, r, fill: "#fff" }, g);
+    el("path", { d: `M ${cx} ${cy - r} A ${r} ${r} 0 0 ${kind === "sequence" ? 0 : 1} ${cx} ${cy + r} Z`, fill: "#222" }, g);
+    el("circle", { cx, cy, r, fill: "none", stroke: "#222", "stroke-width": 1.3 }, g);
+  } else g = el("circle", { cx, cy, r: 1.8, fill: "#aaa" });
+  if (tip) { const t = document.createElementNS(NS, "title"); t.textContent = tip; g.appendChild(t); }
+}
+
+// legend
+let ly = S.top + D.rows.length * S.rowH + 28, lx = S.left + 12;
+S.legend.forEach(([k, s]) => { draw(k, lx + 6, ly - 4); text(lx + 18, ly, s, { "font-size": 10.5 }); lx += 30 + s.length * 5.6; });
+ly += 24; lx = S.left + 12;
+["Rho", "cAMP", "Glu", "none"].forEach(k => {
+  el("rect", { x: lx, y: ly - 10, width: 6, height: 12, fill: S.colours[k] });
+  text(lx + 12, ly, S.lineageNames[k], { "font-size": 10.5 }); lx += 30 + S.lineageNames[k].length * 6;
+});
+text(S.left + 12, ly + 24, "Sequence: a residue of the motif's type conserved in ≥ 60% of the family or one of its kingdoms (Table S7); structure: carrier overlaps or lies within the local backbone variation (Table S9b). Hover a symbol for details.",
+  { "font-size": 9.5, fill: "#666" });
+
+document.getElementById("fig").appendChild(svg);
+document.getElementById("dl").onclick = () => {
+  const blob = new Blob([new XMLSerializer().serializeToString(svg)], { type: "image/svg+xml" });
+  const a = document.createElement("a"); a.href = URL.createObjectURL(blob); a.download = "fig7_definition.svg"; a.click();
+};
+</script>
+</body>
+</html>

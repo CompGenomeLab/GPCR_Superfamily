@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Family origins by lineage</title>
+<style>
+  :root {
+    --bg: #ffffff; --ink: #1d1d1f; --muted: #6e6e73; --rule: #d2d2d7;
+    --band: #e3edf9; --band-strong: #bcd3f0; --kept: #1f5fa8; --aside: #e0762b; --loss: #9a9aa0;
+  }
+  body { margin: 0; background: var(--bg); color: var(--ink);
+         font: 13px/1.4 -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
+  header { padding: 16px 20px 4px; max-width: 1400px; }
+  h1 { font-size: 18px; margin: 0 0 6px; font-weight: 600; }
+  header p { margin: 0 0 8px; color: var(--muted); max-width: 1100px; }
+  .controls { display: flex; gap: 18px; flex-wrap: wrap; padding: 4px 20px 8px; color: var(--muted); }
+  .controls label { cursor: pointer; }
+  .wrap { overflow-x: auto; padding: 0 20px 20px; }
+  svg text { fill: var(--ink); }
+  .muted { fill: var(--muted); }
+  .clade line { stroke: #8e8e93; stroke-width: 1; }
+  .clade .lab { font-size: 10.5px; fill: var(--muted); }
+  .clade .mark { fill: var(--kept); }
+  .row:hover .rowbg { fill: #f5f5f7; }
+  .cell { cursor: default; }
+  #tip { position: fixed; pointer-events: none; background: #fff; border: 1px solid var(--rule);
+         border-radius: 6px; padding: 8px 10px; font-size: 12px; box-shadow: 0 4px 14px rgba(0,0,0,.12);
+         display: none; max-width: 300px; z-index: 5; }
+  #tip b { font-weight: 600; }
+  #tip table { border-collapse: collapse; margin-top: 4px; }
+  #tip td { padding: 0 8px 0 0; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Family origins by lineage: Dollo parsimony and observed presence</h1>
+  <p>Columns are 20 non-overlapping lineages ordered along the tree above them. Dots show the share of each
+     lineage's genomes carrying the family: black for presences the conservative interpretation rests on, orange for
+     questionable presences, red for contamination or horizontal transfer. The Dollo origin (genus threshold
+     k = 2) uses every presence; the conservative interpretation uses the black presences only.
+     Hover a row to mark the conservative origin on the tree; hover a cell for counts.
+     The root (LECA) is drawn as a polytomy of the major eukaryotic groups.</p>
+</header>
+<div class="controls">
+  <span>Dot size:</span>
+  <label><input type="radio" name="unit" value="genomes" checked> share of genomes</label>
+  <label><input type="radio" name="unit" value="genera"> share of genera</label>
+</div>
+<div class="wrap"><svg id="fig" xmlns="http://www.w3.org/2000/svg"></svg></div>
+<div id="tip"></div>
+<script>
+const DATA = __DATA__;
+const NS = "http://www.w3.org/2000/svg";
+const L = DATA.lineages, R = DATA.rows;
+const CW = 28, RH = 24, LEFT = 180, DOLLO_W = 108, INTERP_W = 118, MAXR = 9.5;
+// Tree: DY between levels (enough for one line of node label), leaves end STUB below their parent.
+const TREE_TOP = 14, DY = 12, STUB = 7;
+const X0 = LEFT;
+const colX = i => X0 + i * CW + CW / 2;
+const COL = {black: "#1d1d1f", orange: "#f5b766", red: "#d62728"};
+const svg = document.getElementById("fig");
+const tip = document.getElementById("tip");
+let unit = "genomes";
+
+function el(tag, attrs, parent, text) {
+  const e = document.createElementNS(NS, tag);
+  for (const k in attrs) if (attrs[k] !== null && attrs[k] !== undefined) e.setAttribute(k, attrs[k]);
+  if (text !== undefined) e.textContent = text;
+  (parent || svg).appendChild(e);
+  return e;
+}
+const idx = Object.fromEntries(L.map((l, i) => [l.key, i]));
+
+// ---- lineage tree ----------------------------------------------------------------------
+function layout(node, depth) {
+  if (typeof node === "string") return {leaf: true, cols: [idx[node]], x: colX(idx[node]), depth, label: ""};
+  const kids = node[1].map(c => layout(c, depth + 1));
+  const cols = kids.flatMap(k => k.cols);
+  return {leaf: false, kids, cols, depth, label: node[0],
+          x: (Math.min(...kids.map(k => k.x)) + Math.max(...kids.map(k => k.x))) / 2};
+}
+const root = layout(DATA.hierarchy, 0);
+let maxInner = 0;
+(function md(n) { if (!n.leaf) { maxInner = Math.max(maxInner, n.depth); n.kids.forEach(md); } })(root);
+const TREE_H = maxInner * DY + STUB;
+// The label band is as tall as the longest column label, so the tree's tips reach down to the top
+// of that label and the shorter labels hang below them on dashed lines.
+const LAB_GAP = 28;   // between the labels' common bottom and the grid
+const LAB_H = Math.max(...L.map(l => Math.max(...splitLabel(l.label).map(line => {
+  const t = el("text", {"font-size": 13.5}, svg, line), w = t.getBBox().width;
+  t.remove();
+  return w;
+})))) + 4 + LAB_GAP;
+const GRID_TOP = TREE_TOP + TREE_H + LAB_H;
+const nodeY = n => n.leaf ? TREE_TOP + TREE_H : TREE_TOP + n.depth * DY;
+const clade = el("g", {class: "clade"});
+const allNodes = [], segs = [], labelled = [];
+(function draw(n) {
+  allNodes.push(n);
+  if (n.leaf) return;
+  const y = nodeY(n);
+  const xs = n.kids.map(k => k.x);
+  const bar = {x1: Math.min(...xs), x2: Math.max(...xs), y1: y, y2: y};
+  el("line", bar, clade); segs.push(bar);
+  n.kids.forEach(k => {
+    const v = {x1: k.x, x2: k.x, y1: y, y2: nodeY(k)};
+    el("line", v, clade); segs.push(v); draw(k);
+  });
+  if (n.depth === 0) {
+    const stem = {x1: n.x, x2: n.x, y1: y - 9, y2: y};
+    el("line", stem, clade); segs.push(stem);
+    labelled.push([n, "LECA", true]);
+  } else if (n.label) {
+    labelled.push([n, n.label, false]);
+  }
+})(root);
+// Node labels sit just above their node, on the left unless that would cross a branch or an
+// earlier label, in which case on the right.
+function hits(b, placed) {
+  const pad = 1;
+  const x0 = b.x + pad, x1 = b.x + b.width - pad, y0 = b.y + pad, y1 = b.y + b.height - pad;
+  let n = 0;
+  segs.forEach(s => {
+    if (Math.max(s.x1, s.x2) >= x0 && Math.min(s.x1, s.x2) <= x1 &&
+        Math.max(s.y1, s.y2) >= y0 && Math.min(s.y1, s.y2) <= y1) n++;
+  });
+  placed.forEach(p => { if (p.x < x1 && p.x + p.width > x0 && p.y < y1 && p.y + p.height > y0) n++; });
+  return n;
+}
+const placed = [];
+labelled.forEach(([n, text, bold]) => {
+  const y = nodeY(n) - 3;
+  const opts = [{x: n.x - 3, "text-anchor": "end"}, {x: n.x + 3, "text-anchor": "start"}];
+  let best = null;
+  opts.forEach(o => {
+    const t = el("text", {x: o.x, y, class: "lab", "text-anchor": o["text-anchor"],
+                          "font-weight": bold ? 600 : null}, clade, text);
+    const b = t.getBBox(), score = hits(b, placed);
+    if (!best || score < best.score) { if (best) best.t.remove(); best = {t, b, score}; }
+    else t.remove();
+  });
+  placed.push(best.b);
+});
+const markLayer = el("g", {class: "clade"});
+function markOrigin(cols, cls) {
+  const key = cols.join(",");
+  const node = allNodes.find(n => n.cols.slice().sort((a, b) => a - b).join(",") === key);
+  if (!node) return;
+  el("circle", {cx: node.x, cy: nodeY(node), r: 4.5, class: cls}, markLayer);
+}
+
+// ---- column labels: vertical, hanging from each leaf tip ----------------------------------
+function splitLabel(s) {
+  // Names longer than 13 characters go on two lines, split at the space that best balances them.
+  if (s.length <= 13 || !s.includes(" ")) return [s];
+  let best = null;
+  [...s].forEach((ch, i) => {
+    if (ch !== " ") return;
+    const a = s.slice(0, i), b = s.slice(i + 1), w = Math.max(a.length, b.length);
+    if (!best || w < best[0]) best = [w, a, b];
+  });
+  return [best[1], best[2]];
+}
+const TIP_Y = TREE_TOP + TREE_H;
+// Labels are aligned at their bottom, just above the genome-count row; where a label ends below
+// its leaf tip, a dashed line carries the tree down to it.
+const LAB_BOTTOM = GRID_TOP - LAB_GAP;
+L.forEach((l, i) => {
+  const lines = splitLabel(l.label);
+  let longest = 0;
+  lines.forEach((line, j) => {
+    const x = colX(i) + (lines.length === 1 ? 0 : (j === 0 ? -7 : 7)), y = LAB_BOTTOM;
+    const t = el("text", {x, y, transform: `rotate(-90 ${x} ${y})`, "text-anchor": "start",
+                          "dominant-baseline": "middle", "font-size": 13.5}, svg, line);
+    longest = Math.max(longest, t.getBBox().width);
+  });
+  const top = LAB_BOTTOM - longest - 4;
+  if (top - TIP_Y > 3) el("line", {x1: colX(i), x2: colX(i), y1: TIP_Y, y2: top,
+    stroke: "#8e8e93", "stroke-width": 1, "stroke-dasharray": "2 2"}, svg);
+  el("text", {x: colX(i), y: GRID_TOP - 8, "text-anchor": "middle", "font-size": 14.5}, svg, l.n);
+});
+el("text", {x: LEFT - 10, y: GRID_TOP - 8, "text-anchor": "end", "font-size": 14.5}, svg, "Number of Genomes");
+const XD = X0 + L.length * CW + 8, XI = XD + DOLLO_W;
+// headers on two lines so the origin columns can stay as narrow as their longest name
+[[XD + DOLLO_W / 2, "Dollo", "Origin"], [XI + INTERP_W / 2, "Conservative", "Interpretation"]].forEach(([x, a, b]) => {
+  el("text", {x, y: GRID_TOP - 24, "text-anchor": "middle", "font-size": 13.5, "font-weight": 600}, svg, a);
+  el("text", {x, y: GRID_TOP - 8, "text-anchor": "middle", "font-size": 13.5, "font-weight": 600}, svg, b);
+});
+// rule under the genome-count and column-header row, across the grid and both origin columns
+el("line", {x1: 0, x2: XI + INTERP_W, y1: GRID_TOP - 1, y2: GRID_TOP - 1, stroke: "#8e8e93", "stroke-width": 1}, svg);
+
+// ---- rows ----------------------------------------------------------------------------------
+const byName = Object.fromEntries(R.map(r => [r.name, r]));
+const dotLayer = [];
+let y = GRID_TOP;
+DATA.groups.forEach(([gname, names, how], gi) => {
+  // "above": bold horizontal title over the rows. "side": one line of bold vertical text beside
+  // the rows; a section shorter than its title is padded so the title fits.
+  const TITLE = {"font-size": 24, "font-weight": 700};
+  y += gi === 0 ? 4 : 14;
+  if (gi > 0) el("line", {x1: 8, x2: XI + INTERP_W, y1: y - 7, y2: y - 7, stroke: "#8e8e93", "stroke-width": 1}, svg);
+  let pad = 0;
+  if (how === "above") {
+    el("text", {x: 8, y: y + 20, ...TITLE}, svg, gname);
+    y += 30;
+  } else {
+    const probe = el("text", TITLE, svg, gname);
+    const need = probe.getBBox().width + 10;
+    probe.remove();
+    const blockH = names.length * RH;
+    pad = Math.max(0, (need - blockH) / 2);
+    y += pad;
+    const cy = y + blockH / 2;
+    el("text", {x: 28, y: cy, transform: `rotate(-90 28 ${cy})`, "text-anchor": "middle",
+                "dominant-baseline": "middle", ...TITLE}, svg, gname);
+  }
+  names.forEach(name => {
+    const r = byName[name];
+    const g = el("g", {class: "row"});
+    el("rect", {x: 0, y, width: XI + INTERP_W, height: RH, class: "rowbg", fill: "transparent"}, g);
+    el("text", {x: LEFT - 10, y: y + RH / 2 + 4, "text-anchor": "end", "font-size": 14.5}, g, r.name);
+    r.cells.forEach((c, i) => {
+      const x = X0 + i * CW;
+      const cell = el("g", {class: "cell"}, g);
+      el("rect", {x, y, width: CW, height: RH, fill: "transparent"}, cell);
+      dotLayer.push({cell, c, cx: x + CW / 2, cy: y + RH / 2});
+      cell.addEventListener("mousemove", ev => showTip(ev, r, L[i], c));
+      cell.addEventListener("mouseleave", () => tip.style.display = "none");
+    });
+    // Both origins in regular black; a row where they differ is bold in both columns.
+    const weight = r.dollo !== r.interp ? 700 : 400;
+    el("text", {x: XD + DOLLO_W / 2, y: y + RH / 2 + 4, "text-anchor": "middle", "font-size": 13.5, "font-weight": weight}, g, r.dollo);
+    el("text", {x: XI + INTERP_W / 2, y: y + RH / 2 + 4, "text-anchor": "middle", "font-size": 13.5, "font-weight": weight}, g, r.interp);
+    g.addEventListener("mouseenter", () => { markLayer.innerHTML = "";
+      markOrigin(r.call, "mark"); });
+    g.addEventListener("mouseleave", () => markLayer.innerHTML = "");
+    y += RH;
+  });
+  y += pad;
+});
+// All vertical lines start at the top of the genome-count row: the guides between the major
+// blocks, and the lines setting off the grid from the family names and the origin columns.
+const VLINE_TOP = GRID_TOP - 24;
+["stramen", "other", "amoeb", "earlyfungi", "holoprot", "porifera"].map(k => L.findIndex(l => l.key === k))
+  .forEach(i => el("line", {x1: X0 + i * CW, x2: X0 + i * CW, y1: VLINE_TOP, y2: y,
+  stroke: "#8e8e93", "stroke-width": 1}, svg));
+[X0 - 2, XD - 4, XI].forEach(x => el("line", {x1: x, x2: x, y1: VLINE_TOP, y2: y,
+  stroke: "#8e8e93", "stroke-width": 1}, svg));
+svg.setAttribute("width", XI + INTERP_W + 10);
+svg.setAttribute("height", y + 20);
+
+// ---- legend: framed, in the left margin just above the "Number of Genomes" label ------------------
+// The dot-size key (hollow circles on the grid's area scale) under its label, then the three
+// presence colours. The label follows the genomes/genera toggle.
+const lg = el("g");
+// the size-key label sits centred above its four circles
+const SIZES = [0.1, 0.25, 0.5, 1], keyW = SIZES.length * (2 * MAXR + 10) - 10;
+const sizeLab = el("text", {x: keyW / 2, y: -8, "text-anchor": "middle", "font-size": 13.5}, lg, "% of Genomes");
+let lx = 0;
+const sk = el("g", {}, lg);   // the size circles and their percentages, centred in the frame below
+SIZES.forEach(share => {
+  const r = Math.max(1.8, MAXR * Math.sqrt(share));
+  el("circle", {cx: lx + MAXR, cy: MAXR, r, fill: "none", stroke: COL.black, "stroke-width": 1}, sk);
+  el("text", {x: lx + MAXR, y: 2 * MAXR + 13, "text-anchor": "middle", "font-size": 13}, sk,
+     Math.round(share * 100) + "%");
+  lx += 2 * MAXR + 10;
+});
+// the three presence colours stacked below the size key
+[["black", "Presence"], ["orange", "Sporadic Presence"],
+ ["red", "Contamination or HGT"]].forEach(([k, text], i) => {
+  const cy = 2 * MAXR + 36 + i * 20;
+  el("circle", {cx: 6, cy, r: 6, fill: COL[k]}, lg);
+  el("text", {x: 17, y: cy + 5, "font-size": 13.5}, lg, text);
+});
+// frame around the legend, drawn behind it
+{
+  const b = lg.getBBox(), P = 6;
+  sizeLab.setAttribute("x", b.x + b.width / 2);   // size-key label and circles centred in the frame
+  sk.setAttribute("transform", `translate(${b.x + (b.width - keyW) / 2}, 0)`);
+  lg.insertBefore(el("rect", {x: b.x - P, y: b.y - P, width: b.width + 2 * P, height: b.height + 2 * P,
+    rx: 4, fill: "none", stroke: "#8e8e93", "stroke-width": 1}), lg.firstChild);
+  // Left-aligned in the margin, its bottom just above the "Number of Genomes" label.
+  const H = b.height + 2 * P, fx = 4, fy = GRID_TOP - 26 - H;
+  lg.setAttribute("transform", `translate(${fx - (b.x - P)}, ${fy - (b.y - P)})`);
+}
+
+// ---- dots ----------------------------------------------------------------------------------
+function drawDots() {
+  dotLayer.forEach(({cell, c, cx, cy}) => {
+    cell.querySelectorAll(".d").forEach(e => e.remove());
+    const share = unit === "genomes" ? c.k / c.n : c.gk / c.gn;
+    if (c.k > 0) {
+      const r = Math.max(1.8, MAXR * Math.sqrt(share));
+      const fill = c.black ? COL.black : (c.orange ? COL.orange : COL.red);
+      el("circle", {cx, cy, r, class: "d", fill, stroke: "none"}, cell);
+    }
+  });
+}
+function showTip(ev, r, l, c) {
+  const state = c.k === 0 ? "absent" : [["black", "Presence"], ["orange", "Sporadic Presence"],
+    ["red", "Contamination or HGT"]].filter(([k]) => c[k]).map(([k, t]) => `${c[k]} ${t}`).join(", ");
+  let html = `<b>${r.name}</b> in <b>${l.label}</b><br>${state}<br>` +
+    `genomes ${c.k} / ${c.n} (${(100 * c.k / c.n).toFixed(0)}%)<br>` +
+    `genera ${c.gk} / ${c.gn} (${(100 * c.gk / c.gn).toFixed(0)}%)`;
+  if (c.subs.length) html += "<table>" + c.subs.map(([n, tot, k]) =>
+    `<tr><td>${n}</td><td>${k} / ${tot}</td></tr>`).join("") + "</table>";
+  tip.innerHTML = html;
+  tip.style.display = "block";
+  tip.style.left = Math.min(ev.clientX + 14, window.innerWidth - 320) + "px";
+  tip.style.top = (ev.clientY + 14) + "px";
+}
+document.querySelectorAll("input[name=unit]").forEach(i =>
+  i.addEventListener("change", e => { unit = e.target.value;
+    sizeLab.textContent = unit === "genomes" ? "% of Genomes" : "% of Genera"; drawDots(); }));
+drawDots();
+</script>
+</body>
+</html>

@@ -1,0 +1,582 @@
+{
+ "B0XSZ1": {
+  "taxid": "451804",
+  "organism": "Aspergillus fumigatus (strain CBS 144.89 / FGSC A1163 / CEA10) (Neosartorya fumigata)",
+  "source": "UniProtKB entry (current)"
+ },
+ "B0XZZ4": {
+  "taxid": "451804",
+  "organism": "Aspergillus fumigatus (strain CBS 144.89 / FGSC A1163 / CEA10) (Neosartorya fumigata)",
+  "source": "UniProtKB entry (current)"
+ },
+ "B0Y3U0": {
+  "taxid": "451804",
+  "organism": "Aspergillus fumigatus (strain CBS 144.89 / FGSC A1163 / CEA10) (Neosartorya fumigata)",
+  "source": "UniProtKB entry (current)"
+ },
+ "B0YCI9": {
+  "taxid": "451804",
+  "organism": "Aspergillus fumigatus (strain CBS 144.89 / FGSC A1163 / CEA10) (Neosartorya fumigata)",
+  "source": "UniProtKB entry (current)"
+ },
+ "B3LGT6": {
+  "taxid": "285006",
+  "organism": "Saccharomyces cerevisiae (strain RM11-1a) (Baker's yeast)",
+  "source": "UniProtKB entry (current)"
+ },
+ "B3LQS8": {
+  "taxid": "285006",
+  "organism": "Saccharomyces cerevisiae (strain RM11-1a) (Baker's yeast)",
+  "source": "UniProtKB entry (current)"
+ },
+ "B3LUI5": {
+  "taxid": "285006",
+  "organism": "Saccharomyces cerevisiae (strain RM11-1a) (Baker's yeast)",
+  "source": "UniProtKB entry (current)"
+ },
+ "B6GXR6": {
+  "taxid": "500485",
+  "organism": "Penicillium rubens (strain ATCC 28089 / DSM 1075 / NRRL 1951 / Wisconsin 54-1255) (Penicillium chrysogenum)",
+  "source": "UniProtKB entry (current)"
+ },
+ "B6HUH9": {
+  "taxid": "500485",
+  "organism": "Penicillium rubens (strain ATCC 28089 / DSM 1075 / NRRL 1951 / Wisconsin 54-1255) (Penicillium chrysogenum)",
+  "source": "UniProtKB entry (current)"
+ },
+ "B6Q841": {
+  "taxid": "441960",
+  "organism": "Talaromyces marneffei (strain ATCC 18224 / CBS 334.59 / QM 7333) (Penicillium marneffei)",
+  "source": "UniProtKB entry (current)"
+ },
+ "B6QFU9": {
+  "taxid": "441960",
+  "organism": "Talaromyces marneffei (strain ATCC 18224 / CBS 334.59 / QM 7333) (Penicillium marneffei)",
+  "source": "UniProtKB entry (current)"
+ },
+ "B6QIF8": {
+  "taxid": "441960",
+  "organism": "Talaromyces marneffei (strain ATCC 18224 / CBS 334.59 / QM 7333) (Penicillium marneffei)",
+  "source": "UniProtKB entry (current)"
+ },
+ "B9W7X5": {
+  "taxid": "573826",
+  "organism": "Candida dubliniensis (strain CD36 / ATCC MYA-646 / CBS 7987 / NCPF 3949 / NRRL Y-17841) (Yeast)",
+  "source": "UniProtKB entry (current)"
+ },
+ "B9WCQ2": {
+  "taxid": "573826",
+  "organism": "Candida dubliniensis (strain CD36 / ATCC MYA-646 / CBS 7987 / NCPF 3949 / NRRL Y-17841) (Yeast)",
+  "source": "UniProtKB entry (current)"
+ },
+ "B9WDX3": {
+  "taxid": "573826",
+  "organism": "Candida dubliniensis (strain CD36 / ATCC MYA-646 / CBS 7987 / NCPF 3949 / NRRL Y-17841) (Yeast)",
+  "source": "UniProtKB entry (current)"
+ },
+ "B9WEH0": {
+  "taxid": "573826",
+  "organism": "Candida dubliniensis (strain CD36 / ATCC MYA-646 / CBS 7987 / NCPF 3949 / NRRL Y-17841) (Yeast)",
+  "source": "UniProtKB entry (current)"
+ },
+ "B9WGG0": {
+  "taxid": "573826",
+  "organism": "Candida dubliniensis (strain CD36 / ATCC MYA-646 / CBS 7987 / NCPF 3949 / NRRL Y-17841) (Yeast)",
+  "source": "UniProtKB entry (current)"
+ },
+ "B9WH49": {
+  "taxid": "573826",
+  "organism": "Candida dubliniensis (strain CD36 / ATCC MYA-646 / CBS 7987 / NCPF 3949 / NRRL Y-17841) (Yeast)",
+  "source": "UniProtKB entry (current)"
+ },
+ "B9WM67": {
+  "taxid": "573826",
+  "organism": "Candida dubliniensis (strain CD36 / ATCC MYA-646 / CBS 7987 / NCPF 3949 / NRRL Y-17841) (Yeast)",
+  "source": "UniProtKB entry (current)"
+ },
+ "C4YE89": {
+  "taxid": "294748",
+  "organism": "Candida albicans (strain WO-1) (Yeast)",
+  "source": "UniProtKB entry (current)"
+ },
+ "C4YM83": {
+  "taxid": "294748",
+  "organism": "Candida albicans (strain WO-1) (Yeast)",
+  "source": "UniProtKB entry (current)"
+ },
+ "C4YR15": {
+  "taxid": "294748",
+  "organism": "Candida albicans (strain WO-1) (Yeast)",
+  "source": "UniProtKB entry (current)"
+ },
+ "C7YLT3": {
+  "taxid": "660122",
+  "organism": "Fusarium vanettenii (strain ATCC MYA-4622 / CBS 123669 / FGSC 9596 / NRRL 45880 / 77-13-4) (Fusarium solani subsp. pisi)",
+  "source": "UniProtKB entry (current)"
+ },
+ "E6QZJ2": {
+  "taxid": "367775",
+  "organism": "Cryptococcus gattii serotype B (strain WM276 / ATCC MYA-4071) (Filobasidiella gattii) (Cryptococcus bacillisporus)",
+  "source": "UniProtKB entry (current)"
+ },
+ "E6R3K2": {
+  "taxid": "367775",
+  "organism": "Cryptococcus gattii serotype B (strain WM276 / ATCC MYA-4071) (Filobasidiella gattii) (Cryptococcus bacillisporus)",
+  "source": "UniProtKB entry (current)"
+ },
+ "E6ZVW9": {
+  "taxid": "999809",
+  "organism": "Sporisorium reilianum (strain SRZ2) (Maize head smut fungus)",
+  "source": "UniProtKB entry (current)"
+ },
+ "E6ZX05": {
+  "taxid": "999809",
+  "organism": "Sporisorium reilianum (strain SRZ2) (Maize head smut fungus)",
+  "source": "UniProtKB entry (current)"
+ },
+ "E9F545": {
+  "taxid": "655844",
+  "organism": "Metarhizium robertsii (strain ARSEF 23 / ATCC MYA-3075) (Metarhizium anisopliae (strain ARSEF 23))",
+  "source": "UniProtKB entry (current)"
+ },
+ "F2PRE8": {
+  "taxid": "559882",
+  "organism": "Trichophyton equinum (strain ATCC MYA-4606 / CBS 127.97) (Horse ringworm fungus)",
+  "source": "UniProtKB entry (current)"
+ },
+ "F2PRT0": {
+  "taxid": "559882",
+  "organism": "Trichophyton equinum (strain ATCC MYA-4606 / CBS 127.97) (Horse ringworm fungus)",
+  "source": "UniProtKB entry (current)"
+ },
+ "F2QNV2": {
+  "taxid": "981350",
+  "organism": "Komagataella phaffii (strain ATCC 76273 / CBS 7435 / CECT 11047 / NRRL Y-11430 / Wegner 21-1) (Yeast) (Pichia pastoris)",
+  "source": "UniProtKB entry (current)"
+ },
+ "F2R097": {
+  "taxid": "981350",
+  "organism": "Komagataella phaffii (strain ATCC 76273 / CBS 7435 / CECT 11047 / NRRL Y-11430 / Wegner 21-1) (Yeast) (Pichia pastoris)",
+  "source": "UniProtKB entry (current)"
+ },
+ "F8MMX8": {
+  "taxid": "510951",
+  "organism": "Neurospora tetrasperma (strain FGSC 2508 / ATCC MYA-4615 / P0657)",
+  "source": "UniProtKB entry (current)"
+ },
+ "F8N1U2": {
+  "taxid": "510951",
+  "organism": "Neurospora tetrasperma (strain FGSC 2508 / ATCC MYA-4615 / P0657)",
+  "source": "UniProtKB entry (current)"
+ },
+ "F9X2P3": {
+  "taxid": "336722",
+  "organism": "Zymoseptoria tritici (strain CBS 115943 / IPO323) (Speckled leaf blotch fungus) (Septoria tritici)",
+  "source": "UniProtKB entry (current)"
+ },
+ "F9XGM7": {
+  "taxid": "336722",
+  "organism": "Zymoseptoria tritici (strain CBS 115943 / IPO323) (Speckled leaf blotch fungus) (Septoria tritici)",
+  "source": "UniProtKB entry (current)"
+ },
+ "F9XHC7": {
+  "taxid": "336722",
+  "organism": "Zymoseptoria tritici (strain CBS 115943 / IPO323) (Speckled leaf blotch fungus) (Septoria tritici)",
+  "source": "UniProtKB entry (current)"
+ },
+ "G0V7H9": {
+  "taxid": "27288",
+  "organism": "Naumovozyma castellii (Yeast) (Saccharomyces castellii)",
+  "source": "UniProtKB entry (current)"
+ },
+ "G0VH31": {
+  "taxid": "27288",
+  "organism": "Naumovozyma castellii (Yeast) (Saccharomyces castellii)",
+  "source": "UniProtKB entry (current)"
+ },
+ "G0VK78": {
+  "taxid": "27288",
+  "organism": "Naumovozyma castellii (Yeast) (Saccharomyces castellii)",
+  "source": "UniProtKB entry (current)"
+ },
+ "Q752H9": {
+  "taxid": "284811",
+  "organism": "Eremothecium gossypii (strain ATCC 10895 / CBS 109.51 / FGSC 9923 / NRRL Y-1056) (Yeast) (Ashbya gossypii)",
+  "source": "UniProtKB entry (current)"
+ },
+ "Q75CM5": {
+  "taxid": "284811",
+  "organism": "Eremothecium gossypii (strain ATCC 10895 / CBS 109.51 / FGSC 9923 / NRRL Y-1056) (Yeast) (Ashbya gossypii)",
+  "source": "UniProtKB entry (current)"
+ },
+ "A4QQD9": {
+  "taxid": "242507",
+  "organism": "Magnaporthe oryzae (strain 70-15 / ATCC MYA-4617 / FGSC 8958) (Rice",
+  "source": "UniSave entry history, last version 24 (2011_11/2011_11)"
+ },
+ "A4QS32": {
+  "taxid": "242507",
+  "organism": "Magnaporthe oryzae (strain 70-15 / ATCC MYA-4617 / FGSC 8958) (Rice",
+  "source": "UniSave entry history, last version 20 (2011_11/2011_11)"
+ },
+ "A4QV61": {
+  "taxid": "242507",
+  "organism": "Magnaporthe oryzae (strain 70-15 / ATCC MYA-4617 / FGSC 8958) (Rice",
+  "source": "UniSave entry history, last version 24 (2011_11/2011_11)"
+ },
+ "A4R1Z0": {
+  "taxid": "242507",
+  "organism": "Magnaporthe oryzae (strain 70-15 / ATCC MYA-4617 / FGSC 8958) (Rice",
+  "source": "UniSave entry history, last version 26 (2011_11/2011_11)"
+ },
+ "A4R8K0": {
+  "taxid": "242507",
+  "organism": "Magnaporthe oryzae (strain 70-15 / ATCC MYA-4617 / FGSC 8958) (Rice",
+  "source": "UniSave entry history, last version 24 (2011_11/2011_11)"
+ },
+ "A4R967": {
+  "taxid": "242507",
+  "organism": "Magnaporthe oryzae (strain 70-15 / ATCC MYA-4617 / FGSC 8958) (Rice",
+  "source": "UniSave entry history, last version 22 (2011_11/2011_11)"
+ },
+ "A4RFT2": {
+  "taxid": "242507",
+  "organism": "Magnaporthe oryzae (strain 70-15 / ATCC MYA-4617 / FGSC 8958) (Rice",
+  "source": "UniSave entry history, last version 21 (2011_11/2011_11)"
+ },
+ "A4RMK6": {
+  "taxid": "242507",
+  "organism": "Magnaporthe oryzae (strain 70-15 / ATCC MYA-4617 / FGSC 8958) (Rice",
+  "source": "UniSave entry history, last version 28 (2011_11/2011_11)"
+ },
+ "A6ZXT8": {
+  "taxid": "307796",
+  "organism": "Saccharomyces cerevisiae (strain YJM789) (Baker's yeast).",
+  "source": "UniSave entry history, last version 44 (2026_01/2026_01)"
+ },
+ "A6ZZE8": {
+  "taxid": "307796",
+  "organism": "Saccharomyces cerevisiae (strain YJM789) (Baker's yeast).",
+  "source": "UniSave entry history, last version 41 (2026_01/2026_01)"
+ },
+ "A7A213": {
+  "taxid": "307796",
+  "organism": "Saccharomyces cerevisiae (strain YJM789) (Baker's yeast).",
+  "source": "UniSave entry history, last version 39 (2026_01/2026_01)"
+ },
+ "B5VFN2": {
+  "taxid": "545124",
+  "organism": "Saccharomyces cerevisiae (strain AWRI1631) (Baker's yeast).",
+  "source": "UniSave entry history, last version 38 (2026_01/2026_01)"
+ },
+ "B5VI03": {
+  "taxid": "545124",
+  "organism": "Saccharomyces cerevisiae (strain AWRI1631) (Baker's yeast).",
+  "source": "UniSave entry history, last version 34 (2026_01/2026_01)"
+ },
+ "B5VLY6": {
+  "taxid": "545124",
+  "organism": "Saccharomyces cerevisiae (strain AWRI1631) (Baker's yeast).",
+  "source": "UniSave entry history, last version 37 (2026_01/2026_01)"
+ },
+ "B8P2K7": {
+  "taxid": "561896",
+  "organism": "Postia placenta (strain ATCC 44394 / Madison 698-R) (Brown rot fungus)",
+  "source": "UniSave entry history, last version 38 (2024_05/2024_05)"
+ },
+ "B8P4W1": {
+  "taxid": "561896",
+  "organism": "Postia placenta (strain ATCC 44394 / Madison 698-R) (Brown rot fungus)",
+  "source": "UniSave entry history, last version 30 (2024_05/2024_05)"
+ },
+ "B8P682": {
+  "taxid": "561896",
+  "organism": "Postia placenta (strain ATCC 44394 / Madison 698-R) (Brown rot fungus)",
+  "source": "UniSave entry history, last version 39 (2024_05/2024_05)"
+ },
+ "B8P686": {
+  "taxid": "561896",
+  "organism": "Postia placenta (strain ATCC 44394 / Madison 698-R) (Brown rot fungus)",
+  "source": "UniSave entry history, last version 43 (2024_05/2024_05)"
+ },
+ "B8P690": {
+  "taxid": "561896",
+  "organism": "Postia placenta (strain ATCC 44394 / Madison 698-R) (Brown rot fungus)",
+  "source": "UniSave entry history, last version 44 (2024_05/2024_05)"
+ },
+ "B8P695": {
+  "taxid": "561896",
+  "organism": "Postia placenta (strain ATCC 44394 / Madison 698-R) (Brown rot fungus)",
+  "source": "UniSave entry history, last version 42 (2024_05/2024_05)"
+ },
+ "B8P6F9": {
+  "taxid": "561896",
+  "organism": "Postia placenta (strain ATCC 44394 / Madison 698-R) (Brown rot fungus)",
+  "source": "UniSave entry history, last version 40 (2024_05/2024_05)"
+ },
+ "B8P6G0": {
+  "taxid": "561896",
+  "organism": "Postia placenta (strain ATCC 44394 / Madison 698-R) (Brown rot fungus)",
+  "source": "UniSave entry history, last version 40 (2024_05/2024_05)"
+ },
+ "B8P6G1": {
+  "taxid": "561896",
+  "organism": "Postia placenta (strain ATCC 44394 / Madison 698-R) (Brown rot fungus)",
+  "source": "UniSave entry history, last version 43 (2024_05/2024_05)"
+ },
+ "B8P6G2": {
+  "taxid": "561896",
+  "organism": "Postia placenta (strain ATCC 44394 / Madison 698-R) (Brown rot fungus)",
+  "source": "UniSave entry history, last version 43 (2024_05/2024_05)"
+ },
+ "B8P6G3": {
+  "taxid": "561896",
+  "organism": "Postia placenta (strain ATCC 44394 / Madison 698-R) (Brown rot fungus)",
+  "source": "UniSave entry history, last version 51 (2024_05/2024_05)"
+ },
+ "B8P6G5": {
+  "taxid": "561896",
+  "organism": "Postia placenta (strain ATCC 44394 / Madison 698-R) (Brown rot fungus)",
+  "source": "UniSave entry history, last version 39 (2024_05/2024_05)"
+ },
+ "B8P6G8": {
+  "taxid": "561896",
+  "organism": "Postia placenta (strain ATCC 44394 / Madison 698-R) (Brown rot fungus)",
+  "source": "UniSave entry history, last version 48 (2024_05/2024_05)"
+ },
+ "B8P7B2": {
+  "taxid": "561896",
+  "organism": "Postia placenta (strain ATCC 44394 / Madison 698-R) (Brown rot fungus)",
+  "source": "UniSave entry history, last version 43 (2024_05/2024_05)"
+ },
+ "B8P7C3": {
+  "taxid": "561896",
+  "organism": "Postia placenta (strain ATCC 44394 / Madison 698-R) (Brown rot fungus)",
+  "source": "UniSave entry history, last version 43 (2024_05/2024_05)"
+ },
+ "C0RZ86": {
+  "taxid": "482561",
+  "organism": "Paracoccidioides brasiliensis (strain Pb03).",
+  "source": "UniSave entry history, last version 39 (2023_05/2023_05)"
+ },
+ "C0S6W4": {
+  "taxid": "482561",
+  "organism": "Paracoccidioides brasiliensis (strain Pb03).",
+  "source": "UniSave entry history, last version 33 (2023_05/2023_05)"
+ },
+ "C0S836": {
+  "taxid": "482561",
+  "organism": "Paracoccidioides brasiliensis (strain Pb03).",
+  "source": "UniSave entry history, last version 36 (2023_05/2023_05)"
+ },
+ "C0SCS8": {
+  "taxid": "482561",
+  "organism": "Paracoccidioides brasiliensis (strain Pb03).",
+  "source": "UniSave entry history, last version 39 (2023_05/2023_05)"
+ },
+ "C0SDN9": {
+  "taxid": "482561",
+  "organism": "Paracoccidioides brasiliensis (strain Pb03).",
+  "source": "UniSave entry history, last version 36 (2023_05/2023_05)"
+ },
+ "C0SFT3": {
+  "taxid": "482561",
+  "organism": "Paracoccidioides brasiliensis (strain Pb03).",
+  "source": "UniSave entry history, last version 39 (2023_05/2023_05)"
+ },
+ "C0SJ98": {
+  "taxid": "482561",
+  "organism": "Paracoccidioides brasiliensis (strain Pb03).",
+  "source": "UniSave entry history, last version 33 (2023_05/2023_05)"
+ },
+ "C5GCI9": {
+  "taxid": "559297",
+  "organism": "Ajellomyces dermatitidis (strain ER-3 / ATCC MYA-2586) (Blastomyces",
+  "source": "UniSave entry history, last version 35 (2023_05/2023_05)"
+ },
+ "C5GP18": {
+  "taxid": "559297",
+  "organism": "Ajellomyces dermatitidis (strain ER-3 / ATCC MYA-2586) (Blastomyces",
+  "source": "UniSave entry history, last version 32 (2023_05/2023_05)"
+ },
+ "C5GP53": {
+  "taxid": "559297",
+  "organism": "Ajellomyces dermatitidis (strain ER-3 / ATCC MYA-2586) (Blastomyces",
+  "source": "UniSave entry history, last version 33 (2023_05/2023_05)"
+ },
+ "C5GPU5": {
+  "taxid": "559297",
+  "organism": "Ajellomyces dermatitidis (strain ER-3 / ATCC MYA-2586) (Blastomyces",
+  "source": "UniSave entry history, last version 39 (2023_05/2023_05)"
+ },
+ "C5GXP6": {
+  "taxid": "559297",
+  "organism": "Ajellomyces dermatitidis (strain ER-3 / ATCC MYA-2586) (Blastomyces",
+  "source": "UniSave entry history, last version 42 (2023_05/2023_05)"
+ },
+ "C5JE33": {
+  "taxid": "559298",
+  "organism": "Ajellomyces dermatitidis (strain SLH14081) (Blastomyces dermatitidis).",
+  "source": "UniSave entry history, last version 21 (2016_07/2016_07)"
+ },
+ "C5JV36": {
+  "taxid": "559298",
+  "organism": "Ajellomyces dermatitidis (strain SLH14081) (Blastomyces dermatitidis).",
+  "source": "UniSave entry history, last version 21 (2016_07/2016_07)"
+ },
+ "C5JW94": {
+  "taxid": "559298",
+  "organism": "Ajellomyces dermatitidis (strain SLH14081) (Blastomyces dermatitidis).",
+  "source": "UniSave entry history, last version 21 (2016_07/2016_07)"
+ },
+ "C5K0X4": {
+  "taxid": "559298",
+  "organism": "Ajellomyces dermatitidis (strain SLH14081) (Blastomyces dermatitidis).",
+  "source": "UniSave entry history, last version 23 (2016_07/2016_07)"
+ },
+ "C5P4X9": {
+  "taxid": "222929",
+  "organism": "Coccidioides posadasii (strain C735) (Valley fever fungus).",
+  "source": "UniSave entry history, last version 51 (2026_01/2026_01)"
+ },
+ "C5P6P8": {
+  "taxid": "222929",
+  "organism": "Coccidioides posadasii (strain C735) (Valley fever fungus).",
+  "source": "UniSave entry history, last version 53 (2026_01/2026_01)"
+ },
+ "C5P7H7": {
+  "taxid": "222929",
+  "organism": "Coccidioides posadasii (strain C735) (Valley fever fungus).",
+  "source": "UniSave entry history, last version 53 (2026_01/2026_01)"
+ },
+ "C5P8Y1": {
+  "taxid": "222929",
+  "organism": "Coccidioides posadasii (strain C735) (Valley fever fungus).",
+  "source": "UniSave entry history, last version 53 (2026_01/2026_01)"
+ },
+ "C5PCT6": {
+  "taxid": "222929",
+  "organism": "Coccidioides posadasii (strain C735) (Valley fever fungus).",
+  "source": "UniSave entry history, last version 51 (2026_01/2026_01)"
+ },
+ "C5PF60": {
+  "taxid": "222929",
+  "organism": "Coccidioides posadasii (strain C735) (Valley fever fungus).",
+  "source": "UniSave entry history, last version 50 (2026_01/2026_01)"
+ },
+ "C7GJ32": {
+  "taxid": "574961",
+  "organism": "Saccharomyces cerevisiae (strain JAY291) (Baker's yeast).",
+  "source": "UniSave entry history, last version 41 (2026_01/2026_01)"
+ },
+ "C7GW48": {
+  "taxid": "574961",
+  "organism": "Saccharomyces cerevisiae (strain JAY291) (Baker's yeast).",
+  "source": "UniSave entry history, last version 41 (2026_01/2026_01)"
+ },
+ "C7GY85": {
+  "taxid": "574961",
+  "organism": "Saccharomyces cerevisiae (strain JAY291) (Baker's yeast).",
+  "source": "UniSave entry history, last version 37 (2026_01/2026_01)"
+ },
+ "C8Z4N3": {
+  "taxid": "643680",
+  "organism": "Saccharomyces cerevisiae (strain Lalvin EC1118 / Prise de mousse) (Baker's",
+  "source": "UniSave entry history, last version 43 (2026_01/2026_01)"
+ },
+ "C8Z7Q7": {
+  "taxid": "643680",
+  "organism": "Saccharomyces cerevisiae (strain Lalvin EC1118 / Prise de mousse) (Baker's",
+  "source": "UniSave entry history, last version 35 (2026_01/2026_01)"
+ },
+ "C8ZBZ7": {
+  "taxid": "643680",
+  "organism": "Saccharomyces cerevisiae (strain Lalvin EC1118 / Prise de mousse) (Baker's",
+  "source": "UniSave entry history, last version 43 (2026_01/2026_01)"
+ },
+ "E2LAD9": {
+  "taxid": "554373",
+  "organism": "Moniliophthora perniciosa (strain FA553 / isolate CP02) (Witches'-broom",
+  "source": "UniSave entry history, last version 36 (2024_05/2024_05)"
+ },
+ "E2LT87": {
+  "taxid": "554373",
+  "organism": "Moniliophthora perniciosa (strain FA553 / isolate CP02) (Witches'-broom",
+  "source": "UniSave entry history, last version 43 (2024_05/2024_05)"
+ },
+ "E7KM13": {
+  "taxid": "764098",
+  "organism": "Saccharomyces cerevisiae (strain Lalvin QA23) (Baker's yeast).",
+  "source": "UniSave entry history, last version 15 (2018_10/2018_10)"
+ },
+ "E7LRL9": {
+  "taxid": "764099",
+  "organism": "Saccharomyces cerevisiae (strain VIN 13) (Baker's yeast).",
+  "source": "UniSave entry history, last version 13 (2018_10/2018_10)"
+ },
+ "E7NEY6": {
+  "taxid": "764101",
+  "organism": "Saccharomyces cerevisiae (strain FostersO) (Baker's yeast).",
+  "source": "UniSave entry history, last version 15 (2018_10/2018_10)"
+ },
+ "E7NN56": {
+  "taxid": "764101",
+  "organism": "Saccharomyces cerevisiae (strain FostersO) (Baker's yeast).",
+  "source": "UniSave entry history, last version 15 (2018_10/2018_10)"
+ },
+ "E7R842": {
+  "taxid": "871575",
+  "organism": "Ogataea parapolymorpha (strain DL-1 / ATCC 26012 / NRRL Y-7560)",
+  "source": "UniSave entry history, last version 5 (2014_02/2014_02)"
+ },
+ "F2QZF3": {
+  "taxid": "981350",
+  "organism": "Komagataella phaffii (strain ATCC 76273 / CBS 7435 / CECT 11047 / NRRL",
+  "source": "UniSave entry history, last version 29 (2016_10/2016_10)"
+ },
+ "F2TT75": {
+  "taxid": "653446",
+  "organism": "Ajellomyces dermatitidis (strain ATCC 18188 / CBS 674.68) (Blastomyces",
+  "source": "UniSave entry history, last version 33 (2026_01/2026_01)"
+ },
+ "F8NZ02": {
+  "taxid": "578457",
+  "organism": "Serpula lacrymans var. lacrymans (strain S7.9) (Dry rot fungus).",
+  "source": "UniSave entry history, last version 35 (2026_01/2026_01)"
+ },
+ "F8PE49": {
+  "taxid": "578457",
+  "organism": "Serpula lacrymans var. lacrymans (strain S7.9) (Dry rot fungus).",
+  "source": "UniSave entry history, last version 41 (2026_01/2026_01)"
+ },
+ "Q2KFS2": {
+  "taxid": "242507",
+  "organism": "Pyricularia oryzae (strain 70-15 / ATCC MYA-4617 / FGSC 8958) (Rice blast",
+  "source": "UniSave entry history, last version 50 (2026_01/2026_01)"
+ },
+ "Q4P1K7": {
+  "taxid": "237631",
+  "organism": "Ustilago maydis (strain 521 / FGSC 9021) (Corn smut fungus).",
+  "source": "UniSave entry history, last version 37 (2015_04/2015_04)"
+ },
+ "Q4PEB7": {
+  "taxid": "237631",
+  "organism": "Ustilago maydis (strain 521 / FGSC 9021) (Corn smut fungus).",
+  "source": "UniSave entry history, last version 29 (2015_04/2015_04)"
+ },
+ "UPI000018AD9E": {
+  "taxid": "367110",
+  "organism": "Neurospora crassa",
+  "source": "UniParc entry (organisms of its cross-references)"
+ },
+ "UPI0003CA4572": {
+  "taxid": "367110",
+  "organism": "Neurospora crassa",
+  "source": "UniParc entry (organisms of its cross-references)"
+ },
+ "UPI0003CA490D": {
+  "taxid": "367110",
+  "organism": "Neurospora crassa",
+  "source": "UniParc entry (organisms of its cross-references)"
+ }
+}

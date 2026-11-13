@@ -1,0 +1,137 @@
+accession	from_family	to_family	phylum	class	order	species	tree_side_best_trees	best_score_GPR1_clade	best_score_ClassA_clade
+A0A067MAF8	classA	GPR1	Basidiomycota	Agaricomycetes	Cantharellales	Botryobasidium botryosum	not a representative	669	91
+A0A067MR97	classA	GPR1	Basidiomycota	Agaricomycetes	Cantharellales	Botryobasidium botryosum	not a representative	1013	85
+A0A067MZ95	classA	GPR1	Basidiomycota	Agaricomycetes	Cantharellales	Botryobasidium botryosum	GPR1 8/8, ClassA 0/8	410	70
+A0A067PQF2	classA	GPR1	Basidiomycota	Agaricomycetes	Jaapiales	Jaapia argillacea	not a representative	568	74
+A0A067PRG3	classA	GPR1	Basidiomycota	Agaricomycetes	Jaapiales	Jaapia argillacea	GPR1 8/8, ClassA 0/8	537	67
+A0A067T555	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Galerina marginata	not a representative	660	67
+A0A067T6Z4	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Galerina marginata	not a representative	1082	112
+A0A094IZH7	classA	GPR1	Ascomycota	Leotiomycetes	Thelebolales	Pseudogymnoascus sp. VKM F-4518 (FW-2643)	GPR1 8/8, ClassA 0/8	719	71
+A0A0C3BTL2	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Hebeloma cylindrosporum	not a representative	1077	108
+A0A0C3CD53	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Hebeloma cylindrosporum	not a representative	576	123
+A0A0C3EGZ0	classA	GPR1	Basidiomycota	Agaricomycetes	Atheliales	Piloderma croceum	GPR1 8/8, ClassA 0/8	594	99
+A0A0C3FXJ8	classA	GPR1	Basidiomycota	Agaricomycetes	Atheliales	Piloderma croceum	not a representative	720	81
+A0A0C9WX57	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Laccaria amethystina	not a representative	667	121
+A0A0C9XBZ2	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Laccaria amethystina	not a representative	713	79
+A0A0C9XKY1	classA	GPR1	Basidiomycota	Agaricomycetes	Boletales	Pisolithus microcarpus	not a representative	472	96
+A0A0C9XYU0	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Laccaria amethystina	not a representative	927	86
+A0A0C9Y287	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Laccaria amethystina	not a representative	605	120
+A0A0C9YUR1	classA	GPR1	Basidiomycota	Agaricomycetes	Boletales	Pisolithus microcarpus	GPR1 8/8, ClassA 0/8	690	78
+A0A0D0C350	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Collybiopsis luxurians	not a representative	865	124
+A0A0D7AIP3	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Fistulina hepatica	not a representative	338	114
+A0A0D7B8M9	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Cylindrobasidium torrendii	not a representative	1004	76
+A0A0H2RS01	classA	GPR1	Basidiomycota	Agaricomycetes	Hymenochaetales	Schizopora paradoxa	not a representative	564	98
+A0A0W0FJ28	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Moniliophthora roreri	not a representative	943	119
+A0A164MJY0	classA	GPR1	Basidiomycota	Agaricomycetes	Sistotremastrales	Sertulicium niveocremeum	not a representative	1003	99
+A0A164NTA4	classA	GPR1	Basidiomycota	Agaricomycetes	Sistotremastrales	Sertulicium niveocremeum	not a representative	562	108
+A0A164R1V4	classA	GPR1	Basidiomycota	Agaricomycetes	Sistotremastrales	Sertulicium niveocremeum	not a representative	549	131
+A0A164SPR8	classA	GPR1	Basidiomycota	Agaricomycetes	Sistotremastrales	Sertulicium niveocremeum	GPR1 8/8, ClassA 0/8	614	97
+A0A165VGM7	classA	GPR1	Basidiomycota	Agaricomycetes	Gloeophyllales	Neolentinus lepideus	GPR1 8/8, ClassA 0/8	551	74
+A0A165X8J6	classA	GPR1	Basidiomycota	Agaricomycetes	Sistotremastrales	Sistotremastrum suecicum	not a representative	1432	85
+A0A165XGB8	classA	GPR1	Basidiomycota	Agaricomycetes	Sistotremastrales	Sistotremastrum suecicum	not a representative	565	100
+A0A166JI01	classA	GPR1	Basidiomycota	Agaricomycetes	Russulales	Peniophora sp. CONT	not a representative	717	111
+A0A1B7MRK5	classA	GPR1	Basidiomycota	Agaricomycetes	Boletales	Rhizopogon vinicolor	GPR1 8/8, ClassA 0/8	846	73
+A0A1C7M6M2	classA	GPR1	Basidiomycota	Agaricomycetes	Polyporales	Grifola frondosa	not a representative	612	73
+A0A1Q3E436	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Lentinula edodes	not a representative	841	116
+A0A1X6MRU2	classA	GPR1	Basidiomycota	Agaricomycetes	Polyporales	Rhodonia placenta	not a representative	559	88
+A0A1Y2FJX0	classA	GPR1	Ascomycota	Taphrinomycetes	Taphrinales	Protomyces lactucae-debilis	not a representative	386	96
+A0A1Y2FJY2	classA	GPR1	Ascomycota	Taphrinomycetes	Taphrinales	Protomyces lactucae-debilis	not a representative	1387	77
+A0A1Y2FJY7	classA	GPR1	Ascomycota	Taphrinomycetes	Taphrinales	Protomyces lactucae-debilis	not a representative	349	90
+A0A1Y2FLM1	classA	GPR1	Ascomycota	Taphrinomycetes	Taphrinales	Protomyces lactucae-debilis	not a representative	346	94
+A0A1Y2FM11	classA	GPR1	Ascomycota	Taphrinomycetes	Taphrinales	Protomyces lactucae-debilis	not a representative	285	79
+A0A1Y2FNF1	classA	GPR1	Ascomycota	Taphrinomycetes	Taphrinales	Protomyces lactucae-debilis	GPR1 8/8, ClassA 0/8	173	76
+A0A284QUH1	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Armillaria ostoyae	not a representative	1380	89
+A0A286U956	classA	GPR1	Basidiomycota	Agaricomycetes	Hymenochaetales	Pyrrhoderma noxium	not a representative	511	72
+A0A2G8S7Y9	classA	GPR1	Basidiomycota	Agaricomycetes	Polyporales	Ganoderma sinense	not a representative	626	78
+A0A2H3EBV1	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Armillaria gallica	GPR1 8/8, ClassA 0/8	859	89
+A0A2H3JKF6	classA	GPR1	Basidiomycota	Agaricomycetes	Polyporales	Wolfiporia cocos	not a representative	589	92
+A0A2H3K789	classA	GPR1	Basidiomycota	Agaricomycetes	Polyporales	Wolfiporia cocos	not a representative	363	91
+A0A369J640	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Hypsizygus marmoreus	not a representative	763	87
+A0A369K3N6	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Hypsizygus marmoreus	not a representative	1186	118
+A0A371CU29	classA	GPR1	Basidiomycota	Agaricomycetes	Polyporales	Lentinus brumalis	not a representative	634	68
+A0A401H2E2	classA	GPR1	Basidiomycota	Agaricomycetes	Polyporales	Sparassis crispa	not a representative	635	117
+A0A409WY45	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Psilocybe cyanescens	not a representative	1020	72
+A0A409XQ80	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Psilocybe cyanescens	not a representative	668	146
+A0A409Y707	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Panaeolus cyanescens	not a representative	983	89
+A0A4R0RBZ4	classA	GPR1	Basidiomycota	Agaricomycetes	Polyporales	Steccherinum ochraceum	not a representative	1000	83
+A0A4S4LF44	classA	GPR1	Basidiomycota	Agaricomycetes	Hymenochaetales	Phellinidium pouzarii	GPR1 8/8, ClassA 0/8	786	82
+A0A4S4LGL9	classA	GPR1	Basidiomycota	Agaricomycetes	Hymenochaetales	Phellinidium pouzarii	not a representative	558	77
+A0A4S4LT99	classA	GPR1	Basidiomycota	Agaricomycetes	Russulales	Bondarzewia mesenterica	not a representative	971	88
+A0A4S8LVI9	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Dendrothele bispora	not a representative	60	57
+A0A4S8MJB8	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Dendrothele bispora	not a representative	900	117
+A0A4V1Q3C1	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Candolleomyces aberdarensis	not a representative	601	93
+A0A4V2K7C6	classA	GPR1	Basidiomycota	Agaricomycetes	Polyporales	Dichomitus squalens	not a representative	641	79
+A0A4Y7RC99	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Coprinellus micaceus	not a representative	454	78
+A0A4Y7SBR4	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Coprinellus micaceus	not a representative	476	79
+A0A4Y9ZWM4	classA	GPR1	Basidiomycota	Agaricomycetes	Russulales	Hericium alpestre	not a representative	316	64
+A0A550CJ50	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Schizophyllum amplum	GPR1 8/8, ClassA 0/8	806	96
+A0A5C2SB11	classA	GPR1	Basidiomycota	Agaricomycetes	Polyporales	Lentinus tigrinus	not a representative	642	81
+A0A5C3L2D9	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Coprinopsis marcescibilis	not a representative	902	89
+A0A5C3M6C5	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Crucibulum laeve	not a representative	984	105
+A0A5C3R3J2	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Pterulicium gracile	not a representative	773	100
+A0A5E3WNV1	classA	GPR1	Basidiomycota	Agaricomycetes	Russulales	Peniophora sp. CBMAI 1063	not a representative	712	108
+A0A6A4ICH9	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Gymnopus androsaceus	not a representative	850	122
+A0A6A6GWZ6	classA	GPR1	Ascomycota	Dothideomycetes	Trypetheliales	Viridothelium virens	GPR1 8/8, ClassA 0/8	452	84
+A0A8H5F0B6	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Psilocybe cf. subviscida	not a representative	279	100
+A0A8H5F832	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Psilocybe cf. subviscida	not a representative	1032	79
+A0A8H5HF35	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Tricholomella constricta	not a representative	1305	102
+A0A8H5LRW9	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Tetrapyrgos nigripes	not a representative	912	102
+A0A8H6TE88	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Mycena chlorophos	not a representative	821	94
+A0A8H6WB12	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Mycena indigotica	not a representative	883	98
+A0A8H6WRU5	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Mycena kentingensis (nom. inval.)	not a representative	852	88
+A0A8H6ZHM3	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Mycena sanguinolenta	not a representative	774	95
+A0A8H7FLB6	classA	GPR1	Basidiomycota	Agaricomycetes	Atheliales	Athelia sp. TMB	not a representative	669	69
+A0A8H7XZ66	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Psilocybe cubensis	not a representative	1111	102
+A0A8H8J1R7	classA	GPR1	Basidiomycota	Agaricomycetes	Cantharellales	Ceratobasidium sp. AG-Ba	not a representative	509	80
+A0A8I3A7Z3	classA	GPR1	Basidiomycota	Agaricomycetes	Boletales	Boletus reticuloceps	not a representative	1364	78
+A0A8K0UNT1	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Cristinia sonorae	GPR1 8/8, ClassA 0/8	682	102
+A0A8S0VQ20	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Cyclocybe aegerita	not a representative	373	152
+A0A8S0X4G5	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Cyclocybe aegerita	not a representative	1043	76
+A0A9P3GMM0	classA	GPR1	Basidiomycota	Agaricomycetes	Polyporales	Phanerochaete sordida	GPR1 8/8, ClassA 0/8	671	73
+A0A9P5MZI2	classA	GPR1	Basidiomycota	Agaricomycetes	Russulales	Russula ochroleuca	not a representative	328	132
+A0A9P5U349	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Rhodocollybia butyracea	not a representative	891	105
+A0A9P5UF80	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Rhodocollybia butyracea	not a representative	339	107
+A0A9P5YEG4	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Collybia nuda	not a representative	721	63
+A0A9P5YKF0	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Pholiota conissans	GPR1 8/8, ClassA 0/8	864	108
+A0A9P6AC69	classA	GPR1	Basidiomycota	Agaricomycetes	Cantharellales	Hydnum rufescens	not a representative	302	105
+A0A9P6AHF2	classA	GPR1	Basidiomycota	Agaricomycetes	Cantharellales	Hydnum rufescens	not a representative	321	112
+A0A9P6AYC5	classA	GPR1	Basidiomycota	Agaricomycetes	Cantharellales	Hydnum rufescens	not a representative	351	140
+A0A9P6AYC6	classA	GPR1	Basidiomycota	Agaricomycetes	Cantharellales	Hydnum rufescens	not a representative	332	111
+A0A9P6AYX8	classA	GPR1	Basidiomycota	Agaricomycetes	Cantharellales	Hydnum rufescens	not a representative	349	115
+A0A9P6B3R9	classA	GPR1	Basidiomycota	Agaricomycetes	Cantharellales	Hydnum rufescens	not a representative	378	134
+A0A9P6DUH3	classA	GPR1	Basidiomycota	Agaricomycetes	Cantharellales	Hydnum rufescens	not a representative	339	120
+A0A9P6DWY9	classA	GPR1	Basidiomycota	Agaricomycetes	Cantharellales	Hydnum rufescens	not a representative	378	113
+A0A9P6EE43	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Crepidotus variabilis	not a representative	659	81
+A0A9P7G7X8	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Asterophora parasitica	GPR1 8/8, ClassA 0/8	863	93
+A0A9P7K6F0	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Sphagnurus paluster	not a representative	663	85
+A0A9P7RV57	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Marasmius oreades	not a representative	791	110
+A0A9W8JTQ7	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Agrocybe chaxingu	not a representative	372	142
+A0A9W8N0C1	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Agrocybe chaxingu	not a representative	1038	80
+A0AA38JRY0	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Lentinula guzmanii	not a representative	750	95
+A0AA39PIY7	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Armillaria novae-zelandiae	not a representative	1473	89
+A0AAD4BX34	classA	GPR1	Basidiomycota	Agaricomycetes	Boletales	Boletus edulis	GPR1 8/8, ClassA 0/8	662	75
+A0AAD4Q9H6	classA	GPR1	Basidiomycota	Agaricomycetes	Russulales	Lactarius akahatsu	not a representative	1091	82
+A0AAD4QLR9	classA	GPR1	Basidiomycota	Agaricomycetes	Russulales	Multifurca ochricompacta	GPR1 8/8, ClassA 0/8	594	76
+A0AAD5VVR6	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Leucocoprinus birnbaumii	not a representative	591	81
+A0AAD6TJ29	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Mycena alexandri	not a representative	744	80
+A0AAD6U6D1	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Mycena belliarum	not a representative	888	94
+A0AAD6UAJ9	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Mycena belliarum	not a representative	758	72
+A0AAD6X5X8	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Mycena alexandri	not a representative	679	69
+A0AAD6YH81	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Mycena pura	not a representative	871	93
+A0AAD7CME2	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Roridomyces roridus	not a representative	822	77
+A0AAD7EUD4	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Mycena albidolilacea	not a representative	871	100
+A0AAD7GG65	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Mycena rosella	not a representative	773	75
+A0AAD7HJL7	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Mycena metata	not a representative	725	73
+A0AAD7I9E1	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Mycena metata	not a representative	725	72
+A0AAD7IKX8	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Mycena maculata	not a representative	789	71
+A0AAD7MMH2	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Mycena metata	not a representative	738	73
+A0AAD7NG56	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Mycena maculata	not a representative	867	80
+B0D9Y2	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Laccaria bicolor	not a representative	956	96
+B0DDN9	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Laccaria bicolor	not a representative	542	141
+F8PYW2	classA	GPR1	Basidiomycota	Agaricomycetes	Boletales	Serpula lacrymans	GPR1 8/8, ClassA 0/8	841	71
+J4GP61	classA	GPR1	Basidiomycota	Agaricomycetes	Polyporales	Fibroporia radiculosa	not a representative	574	73
+K5WGM2	classA	GPR1	Basidiomycota	Agaricomycetes	Polyporales	Phanerochaete carnosa	not a representative	1274	72
+M5GG22	classA	GPR1	Basidiomycota	Dacrymycetes	Dacrymycetales	Dacryopinax primogenitus	GPR1 8/8, ClassA 0/8	327	121
+S7REM6	classA	GPR1	Basidiomycota	Agaricomycetes	Gloeophyllales	Gloeophyllum trabeum	not a representative	1060	80
+V2WYF9	classA	GPR1	Basidiomycota	Agaricomycetes	Agaricales	Moniliophthora roreri	not a representative	943	119
+W4K3V0	classA	GPR1	Basidiomycota	Agaricomycetes	Russulales	Heterobasidion irregulare	not a representative	970	84

@@ -1,0 +1,22 @@
+kind	study	their_family	genome	status	count	source	evidence	seq_id	sequence	ids
+claim	Itoigawa et al. 2024	T2R	Leucoraja erinacea	present	1	Table S1 (searched) and Table S2 (TAS2R_p); pseudogenes only	genomic loci (contig and coordinates), no protein			
+claim	Itoigawa et al. 2024	T2R	Amblyraja radiata	present	2	Table S1 (searched) and Table S2 (TAS2R_1p, TAS2R_2p); pseudogenes only	genomic loci (contig and coordinates), no protein			
+claim	Itoigawa et al. 2024	T2R	Pristis pectinata	present	1	Table S1 (searched) and Table S2 (TAS2R)	genomic loci (contig and coordinates), no protein			
+claim	Itoigawa et al. 2024	T2R	Hemitrygon akajei	present	2	Table S1 (searched) and Table S2 (TAS2R_1, TAS2R_2p)	genomic loci (contig and coordinates), no protein			
+claim	Itoigawa et al. 2024	T2R	Potamotrygon leopoldi	present	2	Table S1 (searched) and Table S2 (TAS2R_1, TAS2R_2p)	genomic loci (contig and coordinates), no protein			
+claim	Itoigawa et al. 2024	T2R	Scyliorhinus torazame	present	1	Table S1 (searched) and Table S2 (TAS2R)	genomic loci (contig and coordinates), no protein			
+claim	Itoigawa et al. 2024	T2R	Sphyrna mokarran	present	1	Table S1 (searched) and Table S2 (TAS2R)	genomic loci (contig and coordinates), no protein			
+claim	Itoigawa et al. 2024	T2R	Carcharodon carcharias	absent	0	Table S1 (searched) and Table S2 (no TAS2R locus)				
+claim	Itoigawa et al. 2024	T2R	Isurus oxyrinchus	absent	0	Table S1 (searched) and Table S2 (no TAS2R locus)				
+claim	Itoigawa et al. 2024	T2R	Stegostoma fasciatum	present	1	Table S1 (searched) and Table S2 (TAS2R)	genomic loci (contig and coordinates), no protein			
+claim	Itoigawa et al. 2024	T2R	Rhincodon typus	present	1	Table S1 (searched) and Table S2 (TAS2R)	genomic loci (contig and coordinates), no protein			
+claim	Itoigawa et al. 2024	T2R	Chiloscyllium punctatum	present	1	Table S1 (searched) and Table S2 (TAS2R)	genomic loci (contig and coordinates), no protein			
+claim	Itoigawa et al. 2024	T2R	Chiloscyllium plagiosum	present	1	Table S1 (searched) and Table S2 (TAS2R)	genomic loci (contig and coordinates), no protein			
+claim	Itoigawa et al. 2024	T2R	Squalus acanthias	absent	0	Table S1 (searched) and Table S2 (no TAS2R locus)				
+claim	Itoigawa et al. 2024	T2R	Callorhinchus milii	absent	0	Table S1 (searched) and Table S2 (no TAS2R locus)				
+claim	Itoigawa et al. 2024	T2R	Hydrolagus affinis	absent	0	Table S1 (searched) and Table S2 (no TAS2R locus)				
+claim	Itoigawa et al. 2024	T2R	Lethenteron camtschaticum	absent	0	Table S1 (searched) and Table S2 (no TAS2R locus)				
+claim	Itoigawa et al. 2024	T2R	Lethenteron reissneri	absent	0	Table S1 (searched) and Table S2 (no TAS2R locus)				
+claim	Itoigawa et al. 2024	T2R	Entosphenus tridentatus	absent	0	Table S1 (searched) and Table S2 (no TAS2R locus)				
+claim	Itoigawa et al. 2024	T2R	Petromyzon marinus	absent	0	Table S1 (searched) and Table S2 (no TAS2R locus)				
+claim	Itoigawa et al. 2024	T2R	Eptatretus burgeri	absent	0	Table S1 (searched) and Table S2 (no TAS2R locus)				

@@ -1,0 +1,794 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Overlap MRCA picker</title>
+<style>
+:root{--bg:#fbfbfa;--panel:#fff;--bd:#e3e1dc;--ink:#26241f;--dim:#8a857c;
+--mute:#dfdcd6;--rep:#c0392b;--inc:#2874a6;--sel:#1e8449;--step:#e67e22;
+--open:#8e44ad;--done:#b9d4c4}
+*{box-sizing:border-box}
+body{margin:0;font:13px/1.45 ui-sans-serif,system-ui,"Segoe UI",sans-serif;background:var(--bg);color:var(--ink)}
+header{padding:9px 15px;border-bottom:1px solid var(--bd);background:var(--panel);
+display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+h1{font-size:14px;margin:0;font-weight:650;letter-spacing:-.01em}
+.sub{color:var(--dim);font-size:11.5px}
+main{display:flex;height:calc(100vh - 51px);align-items:stretch}
+#famcol{width:170px;border-right:1px solid var(--bd);background:var(--panel);overflow:auto;flex:none}
+.fam{padding:6px 10px;cursor:pointer;border-bottom:1px solid #f2f0ed;display:flex;
+justify-content:space-between;align-items:center;gap:6px}
+.fam:hover{background:#f5f3f0}
+.fam.on{background:#eef4fb;box-shadow:inset 3px 0 0 var(--inc);font-weight:600}
+.fam.sweep{background:#f7f1fb;border-bottom:2px solid var(--bd);font-weight:600}
+.fam.sweep.on{background:#f0e2f8;box-shadow:inset 3px 0 0 var(--open)}
+.fam .n{font-size:10.5px;color:var(--dim);font-variant-numeric:tabular-nums}
+.fam .n.has{color:var(--sel);font-weight:700}
+.fam .n.open{color:var(--open);font-weight:700}
+#treewrap{flex:1;overflow:auto;background:var(--panel);min-width:0}
+#side{width:340px;border-left:1px solid var(--bd);background:var(--panel);
+overflow:auto;padding:11px 13px;flex:none}
+button,select{font:inherit;padding:4px 9px;border:1px solid var(--bd);background:#fff;
+border-radius:5px;cursor:pointer;color:var(--ink)}
+button:hover{background:#f2f0ec}button:disabled{opacity:.4;cursor:default}
+button.pri{background:var(--ink);color:#fff;border-color:var(--ink)}
+button.pri:hover{background:#413d36}
+#target{border-color:var(--open);color:var(--open);font-weight:600}
+.k{font-size:10.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--dim);
+margin:13px 0 5px;font-weight:600}
+.k:first-child{margin-top:0}
+table{border-collapse:collapse;width:100%;font-size:11.5px}
+td{padding:1.5px 4px;vertical-align:top}
+td.r{text-align:right;color:var(--dim);font-variant-numeric:tabular-nums;width:38px}
+.seqs{font:11px ui-monospace,Consolas,monospace;max-height:252px;overflow:auto;
+border:1px solid var(--bd);border-radius:5px;padding:5px 7px;background:#fcfbfa}
+.seqs div{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pill{display:inline-block;padding:1px 6px;border-radius:9px;font-size:10.5px;background:#f1efeb}
+.pill.rep{background:#fbe9e7;color:var(--rep)}
+.selrow{display:flex;justify-content:space-between;gap:6px;padding:4px 0;
+border-bottom:1px solid #f2f0ed;align-items:baseline}
+.x{cursor:pointer;color:var(--dim);font-size:15px;line-height:1}
+.x:hover{color:var(--rep)}
+.bar{height:7px;border-radius:4px;background:#eceae6;overflow:hidden;margin:5px 0 2px}
+.bar i{display:block;height:100%;background:var(--sel)}
+text{font-family:ui-monospace,Consolas,monospace;dominant-baseline:middle}
+.nd{cursor:pointer}
+text.nd:hover{text-decoration:underline}
+label.cb{display:flex;gap:5px;align-items:center;font-size:11.5px;color:var(--dim);cursor:pointer}
+</style></head><body>
+<header>
+  <h1>Overlap MRCA picker</h1>
+  <span class="sub">rooted on the Mth group &middot; 695 leaves</span>
+  <span style="flex:1"></span>
+  <span id="fambits">
+    <button id="down">&darr; tips</button>
+    <b id="steplab" style="font-variant-numeric:tabular-nums;min-width:62px;text-align:center">step 0</b>
+    <button id="up">&uarr; root</button>
+  </span>
+  <span id="sweepbits" style="display:none">
+    assign to <select id="target"></select>
+    <button id="commit" disabled>Add</button>
+    <button id="unassign" disabled>Unassign</button>
+    <button id="clearpick" disabled>Clear</button>
+  </span>
+  <label class="cb"><input type="checkbox" id="phylo"> branch lengths</label>
+  <label class="cb"><input type="checkbox" id="collapse" checked> collapse muted</label>
+  <label class="cb"><input type="checkbox" id="whole"> whole tree</label>
+  <span id="savestate" class="sub"></span>
+  <button id="link">Link auto-save file</button>
+  <button id="exp" class="pri">Export</button>
+</header>
+<main>
+  <div id="famcol"></div>
+  <div id="treewrap"><svg id="svg"></svg></div>
+  <div id="side"></div>
+</main>
+<script>
+const DATA = __TREE_DATA__;
+const SEED = __SEED__;
+const N = DATA.nodes, ROOT = DATA.root;
+const kids = i => N[i].c;
+const isLeaf = i => N[i].c.length === 0;
+
+const under = new Array(N.length);
+(function calc(i){
+  if (isLeaf(i)) { under[i] = [i]; return under[i]; }
+  let a = [];
+  for (const c of kids(i)) a = a.concat(calc(c));
+  return under[i] = a;
+})(ROOT);
+const underSet = under.map(a => new Set(a));
+
+const repsOf = {};
+for (const f of DATA.families) repsOf[f] = [];
+for (const n of N) if (n.lab && n.t.endsWith("*")) repsOf[n.t.slice(0, -1)].push(n.id);
+const isRep  = i => N[i].t.endsWith("*");
+const claimsIt = (l, f) => !isRep(l) && N[l].t.split("-").indexOf(f) >= 0;
+const byAcc  = {};
+for (const n of N) if (n.lab) byAcc[n.acc] = n.id;
+const OVERLAP = N.filter(n => n.lab && !isRep(n.id)).map(n => n.id);
+
+let mode = "family", fam = DATA.families[0], target = DATA.families[0];
+let step = 0, phylo = false, whole = false, collapse = true;
+let pending = [];   // sweep mode: nodes staged for assignment, nothing written until Add
+
+let picks = SEED.picks || {}, sweep = SEED.sweep || {};
+// Review decisions, which outrank both of the above. A value is the family the
+// sequence was moved to; null means it was deliberately left out. Keeping this
+// separate means a review never rewrites the clade or sweep history behind it.
+let override = SEED.override || {};
+
+// The file this page was built from wins whenever the server is writing that file,
+// because every save keeps it current. localStorage is only the fallback for the
+// file:// case, where nothing else persists the work. Preferring the cache while
+// served let a stale browser state silently overwrite decisions already on disk,
+// which is how four sequences that had been set aside came back assigned.
+if (location.protocol !== "http:" && location.protocol !== "https:") {
+  try {
+    const st = JSON.parse(localStorage.getItem("gpcr_mrca_v3"));
+    if (st && st.picks && Object.keys(st.picks).length) {
+      picks = st.picks; sweep = st.sweep || {}; override = st.override || {};
+    }
+  } catch (e) {}
+}
+
+/* ---------- derived assignment ---------- */
+let assigned = {};           // leafId -> {f, node, src}
+function recompute(){
+  assigned = {};
+  for (const f of DATA.families)
+    for (const nd of (picks[f] || []))
+      for (const l of under[nd])
+        if (claimsIt(l, f) && !assigned[l]) assigned[l] = {f: f, node: nd, src: "clade"};
+  for (const acc in sweep) {
+    const l = byAcc[acc];
+    if (l !== undefined && !assigned[l]) assigned[l] = {f: sweep[acc].f, node: sweep[acc].node, src: "sweep"};
+  }
+  for (const acc in override) {
+    const l = byAcc[acc];
+    if (l === undefined) continue;
+    if (override[acc]) assigned[l] = {f: override[acc], node: "-", src: "manual"};
+    else delete assigned[l];
+  }
+}
+const unassigned = () => OVERLAP.filter(l => !assigned[l]);
+// What sweep is allowed to stage, in one place, because the tint, the click and the
+// commit each used to test this for themselves and had drifted apart: the tree lit
+// up leaves that a click then refused to take. Review ignores the assigned test on
+// purpose, so a decision already made can be revisited.
+const sweepable = l => claimsIt(l, target) && (mode === "review" || !assigned[l]);
+
+/* ---------- saving ---------- */
+function tsv(){
+  let t = "kind\tfamily\tnode\taccession\tlabel\n";
+  for (const f of DATA.families)
+    for (const r of repsOf[f]) t += "rep\t" + f + "\t-\t" + N[r].acc + "\t" + N[r].t + "\n";
+  for (const l of OVERLAP) {
+    const a = assigned[l];
+    // A sequence set aside on purpose and one simply not decided yet both read as
+    // unassigned here, but they must not come back the same on the next build: the
+    // first has to stay out, the second has to stay claimable. Only an explicit null
+    // in `override` is a deliberate exclusion, so that is what `excluded` records.
+    const kind = override[N[l].acc] === null ? "excluded" : "ambiguous";
+    t += a ? (a.src + "\t" + a.f + "\t" + a.node + "\t" + N[l].acc + "\t" + N[l].t + "\n")
+           : (kind + "\t-\t-\t" + N[l].acc + "\t" + N[l].t + "\n");
+  }
+  return t;
+}
+let fileHandle = null, saveTimer = null;
+const SERVED = location.protocol === "http:" || location.protocol === "https:";
+function note(msg, col){
+  const el = document.getElementById("savestate");
+  el.textContent = msg; el.style.color = col || "var(--dim)";
+}
+async function postSave(){
+  try {
+    const r = await fetch("save", {method: "POST", body: tsv()});
+    if (!r.ok) throw 0;
+    note("saved " + new Date().toLocaleTimeString(), "var(--sel)");
+  } catch (e) { note("server not responding", "var(--rep)"); }
+}
+function idb(fn){
+  const r = indexedDB.open("gpcr_mrca", 1);
+  r.onupgradeneeded = () => r.result.createObjectStore("h");
+  r.onsuccess = () => fn(r.result);
+}
+function rememberHandle(h){ idb(db => db.transaction("h", "readwrite").objectStore("h").put(h, "file")); }
+function recallHandle(cb){
+  if (!window.indexedDB) return cb(null);
+  idb(db => { const q = db.transaction("h").objectStore("h").get("file");
+              q.onsuccess = () => cb(q.result || null); q.onerror = () => cb(null); });
+}
+async function writeOut(){
+  if (!fileHandle) return;
+  try {
+    const w = await fileHandle.createWritable();
+    await w.write(tsv()); await w.close();
+    note("saved " + new Date().toLocaleTimeString(), "var(--sel)");
+  } catch (e) { note("save failed — relink", "var(--rep)"); fileHandle = null; linkBtn(); }
+}
+function save(){
+  recompute();
+  try { localStorage.setItem("gpcr_mrca_v3", JSON.stringify({picks: picks, sweep: sweep, override: override})); } catch (e) {}
+  clearTimeout(saveTimer);
+  if (SERVED)          saveTimer = setTimeout(postSave, 200);
+  else if (fileHandle) saveTimer = setTimeout(writeOut, 250);
+}
+function linkBtn(){
+  document.getElementById("link").textContent = fileHandle ? "Auto-save linked" : "Link auto-save file";
+}
+document.getElementById("link").onclick = async function(){
+  if (!window.showSaveFilePicker) { note("no file access — use Export", "var(--rep)"); return; }
+  try {
+    fileHandle = await window.showSaveFilePicker({suggestedName: "mrca_selections.tsv",
+      types: [{description: "TSV", accept: {"text/tab-separated-values": [".tsv"]}}]});
+    rememberHandle(fileHandle); linkBtn(); await writeOut();
+  } catch (e) {}
+};
+if (SERVED) {
+  document.getElementById("link").style.display = "none";
+  note("auto-saving to mrca_selections.tsv", "var(--sel)");
+} else {
+  recallHandle(async function(h){
+    if (!h) { note("open via run_mrca_picker.bat to auto-save", "var(--step)"); return; }
+    try {
+      const p = await h.queryPermission({mode: "readwrite"});
+      if (p === "granted") { fileHandle = h; linkBtn(); note("auto-save ready"); }
+      else note("click Link auto-save file to resume", "var(--step)");
+    } catch (e) { note("open via run_mrca_picker.bat to auto-save", "var(--step)"); }
+  });
+}
+
+/* ---------- tree helpers ---------- */
+function anc(i, k){ while (k-- > 0 && N[i].p !== null) i = N[i].p; return i; }
+function stepNodes(){
+  const s = [...new Set(repsOf[fam].map(r => anc(r, step)))];
+  return s.filter(a => !s.some(b => b !== a && underSet[b].has(a)));
+}
+function pathUp(i){ const p = []; while (i !== null) { p.push(i); i = N[i].p; } return p; }
+function mrca(list){
+  if (!list.length) return ROOT;
+  let common = pathUp(list[0]);
+  for (const x of list.slice(1)) { const s = new Set(pathUp(x)); common = common.filter(y => s.has(y)); }
+  return common[0];
+}
+
+/* ---------- render ---------- */
+function render(){
+  const SW = mode === "sweep" || mode === "review";
+  const RV = mode === "review";
+  const open = new Set(unassigned());
+  // Sweep can only stage a leaf that both is unassigned and claims the current
+  // target, but `open` alone is every unassigned leaf whatever the target. Coloring
+  // off `open` made leaves belonging to some other family's overlap look selectable
+  // when a click on them was always going to be a no-op. This narrows the cue only.
+  // What is drawn and what is folded stays on `open`, so the tree keeps the same
+  // shape whichever target is selected, and switching target never hides it.
+  const targetOpen = SW && !RV
+    ? new Set([...open].filter(sweepable)) : open;
+  let sn, inc, repset, onpath, viewRoot, hot;
+
+  const stagedLeaves = new Set();
+  if (SW)
+    for (const i of pending)
+      for (const l of under[i])
+        if (sweepable(l)) stagedLeaves.add(l);
+
+  if (SW) {
+    sn = []; inc = new Set(); repset = new Set();
+    hot = RV ? new Set(OVERLAP) : open;   // review shows every contested leaf
+    viewRoot = ROOT;
+    onpath = new Set();
+    for (const l of hot) for (const i of pathUp(l)) onpath.add(i);
+  } else {
+    sn = stepNodes();
+    inc = new Set();
+    for (const n of sn) for (const l of under[n]) inc.add(l);
+    repset = new Set(repsOf[fam]);
+    hot = new Set([...inc, ...repset]);
+    onpath = new Set();
+    for (const r of repsOf[fam]) for (const i of pathUp(r)) onpath.add(i);
+    const m = mrca(sn);
+    viewRoot = whole ? ROOT : (N[m].p !== null ? N[m].p : m);
+  }
+
+  const hasShown = {};
+  (function mark(i){
+    if (isLeaf(i)) return hasShown[i] = hot.has(i);
+    let h = false;
+    for (const c of kids(i)) h = mark(c) || h;
+    return hasShown[i] = h;
+  })(viewRoot);
+  const folded = new Set();
+  if (collapse) (function fold(i){
+    if (!hasShown[i] && under[i].length > 1) { folded.add(i); return; }
+    for (const c of kids(i)) fold(c);
+  })(viewRoot);
+
+  const ys = {}; let k = 0;
+  (function ord(i){
+    if (folded.has(i) || isLeaf(i)) { ys[i] = k++; return; }
+    for (const c of kids(i)) ord(c);
+  })(viewRoot);
+  const ymemo = {};
+  function yof(i){
+    if (i in ymemo) return ymemo[i];
+    if (folded.has(i) || isLeaf(i)) return ymemo[i] = ys[i];
+    const c = kids(i);
+    return ymemo[i] = (yof(c[0]) + yof(c[c.length - 1])) / 2;
+  }
+
+  const LH = 12, PAD = 16, W = 740;
+  const x0 = phylo ? N[viewRoot].x : N[viewRoot].d;
+  const span = (phylo ? DATA.maxx - x0 : DATA.maxdepth - x0) || 1;
+  const xs = {};
+  (function px(i){
+    xs[i] = PAD + ((phylo ? N[i].x : N[i].d) - x0) / span * W;
+    for (const c of kids(i)) px(c);
+  })(viewRoot);
+
+  // Where a leaf's label sits, decided once so the pre-pass and the draw agree.
+  function leafLabel(i){
+    if (SW) {
+      if (stagedLeaves.has(i)) return N[i].t + " → " + target;
+      if (!assigned[i])        return N[i].t;
+      if (RV || assigned[i])   return N[i].t + " → " + assigned[i].f;
+      return null;
+    }
+    if (repset.has(i)) return N[i].t;
+    if (inc.has(i))    return N[i].t + (assigned[i] ? " → " + assigned[i].f : "");
+    return null;
+  }
+
+  // The evidence columns start past the furthest-right label of any leaf that is
+  // actually drawn, so they form two straight columns rather than following the tree
+  // in and out. The font is monospace at 9.5px, so a label's width is its length.
+  let COLX = 0, widestScore = 0;
+  (function measure(i){
+    if (folded.has(i)) return;
+    if (isLeaf(i)) {
+      const lb = leafLabel(i);
+      if (lb) COLX = Math.max(COLX, xs[i] + 7 + (N[i].acc + "  " + lb).length * 5.72);
+      const mr = N[i].m;
+      if (mr && (SW ? (RV || open.has(i) || stagedLeaves.has(i)) : !!lb)) {
+        const t = mr.slice(0, Math.min(mr.length, 3))
+                    .map(e => e[0] + " " + e[1].toFixed(2)).join("  ");
+        widestScore = Math.max(widestScore, t.length + 1);
+      }
+      return;
+    }
+    for (const c of kids(i)) measure(c);
+  })(viewRoot);
+  COLX += 26;
+  const SCOREW = 72 + 7 + widestScore * 5.1 + 40;   // bar, text, then the fold margin
+
+  const H = k * LH + PAD * 2;
+  const Y = i => PAD + yof(i) * LH + LH / 2;
+  let s = '<svg id="svg" xmlns="http://www.w3.org/2000/svg" width="' + (COLX + SCOREW + 40) + '" height="' + H + '">';
+  // The column title sits right above the score bars; what the numbers mean is
+  // in its tooltip, so it cannot run into the tree labels on the left.
+  s += '<text x="' + COLX + '" y="10" font-size="10" font-weight="700" fill="#5f5a52">'
+     + 'Median Normalized Search Score'
+     + '<title>search score ÷ the median member of that family; tick = 1.0; '
+     + '× = fold margin over the runner-up family</title></text>';
+  if (!SW)
+    s += '<text x="' + PAD + '" y="8" font-size="8.5" fill="#b4afa6">▸ marks ' + fam + '</text>';
+
+  (function draw(i){
+    const y = Y(i), x = xs[i];
+    const px_ = (i === viewRoot) ? x : xs[N[i].p];
+    let col = "var(--mute)", wd = 1, lab = null;
+    if (isLeaf(i)) {
+      lab = leafLabel(i);
+      if (SW) {
+        if (stagedLeaves.has(i)) { col = "var(--step)"; wd = 2.2; }
+        else if (targetOpen.has(i)) { col = "var(--open)"; wd = 1.7; }
+        else if (assigned[i])    { col = RV ? "var(--sel)" : "var(--done)";
+                                   wd = RV ? 1.6 : 1.2; }
+      } else {
+        if (repset.has(i))      { col = "var(--rep)"; wd = 1.7; }
+        else if (inc.has(i))    { col = "var(--inc)"; wd = 1.7; }
+      }
+    }
+    s += '<path d="M' + px_ + ' ' + y + ' H' + x + '" stroke="' + col + '" stroke-width="' + wd + '" fill="none"/>';
+
+    if (folded.has(i)) {
+      const n = under[i].length, h = 3.4, w = 17;
+      const c = {};
+      for (const l of under[i]) {
+        const key = isRep(l) ? N[l].t.slice(0, -1) : (assigned[l] ? assigned[l].f : "?");
+        c[key] = (c[key] || 0) + 1;
+      }
+      const ord = Object.entries(c).sort((a, b) => b[1] - a[1]);
+      const only = ord.length === 1;
+      const txt = ord.slice(0, 2).map(e => e[0] + " " + e[1]).join(" / ")
+                + (ord.length > 2 ? " +" + (ord.length - 2) : "");
+      const tint = only && ord[0][0] !== "?" ? "#cfe3d6" : "#e6e3dd";
+      const edge = only && ord[0][0] !== "?" ? "#a9c9b7" : "#cfcbc3";
+      // The wedge is selectable too. A contaminating clade is usually muted, and a
+      // muted block is exactly what gets folded, so it has to be clickable where it
+      // stands rather than only after the collapse is switched off.
+      const isSel = !SW && (picks[fam] || []).indexOf(i) >= 0;
+      const staged = SW && pending.indexOf(i) >= 0;
+      const wf = isSel ? "var(--sel)" : staged ? "var(--step)" : tint;
+      const we = isSel ? "var(--sel)" : staged ? "var(--step)" : edge;
+      const comp = {};
+      for (const l of under[i]) comp[N[l].t] = (comp[N[l].t] || 0) + 1;
+      const detail = Object.entries(comp).sort((a, b) => b[1] - a[1]).slice(0, 4)
+                     .map(e => e[0] + " " + e[1]).join(", ");
+      s += '<path class="nd" data-id="' + i + '" d="M' + x + ' ' + y + ' L' + (x + w)
+         + ' ' + (y - h) + ' L' + (x + w) + ' ' + (y + h) + ' Z" fill="' + wf
+         + '" stroke="' + we + '" stroke-width="' + (isSel || staged ? 2 : 1)
+         + '"><title>node ' + i + ' — ' + n + ' seqs, collapsed'
+         + (N[i].sup ? ' — support ' + N[i].sup : '') + '\n' + detail + '</title></path>'
+         + '<text class="nd" data-id="' + i + '" x="' + (x + w + 4) + '" y="' + y
+         + '" font-size="9" fill="#9d978c">' + n + ' · ' + txt + '</text>';
+      return;
+    }
+    const ch = kids(i);
+    if (ch.length) {
+      s += '<path d="M' + x + ' ' + Y(ch[0]) + ' V' + Y(ch[ch.length - 1]) + '" stroke="'
+         + (onpath.has(i) ? "#9a948a" : "var(--mute)") + '" stroke-width="' + (onpath.has(i) ? 1.4 : 1) + '" fill="none"/>';
+      for (const c of ch) draw(c);
+      {
+        // Every internal node is selectable, not only the ancestors of this family's
+        // representatives. A contaminating block often sits in a clade that is not on
+        // that path, and it has to be reachable to be excluded or claimed.
+        const relevant = onpath.has(i);
+        let r = relevant ? 3 : 2.1, fill = "#fff";
+        let stroke = relevant ? "#9a948a" : "#c9c5bd";
+        if (SW) {
+          const nOpen = under[i].filter(l => targetOpen.has(l)).length;
+          if (pending.indexOf(i) >= 0) { r = 5; fill = "var(--step)"; stroke = "var(--step)"; }
+          else if (nOpen)              { r = 3.4; stroke = "var(--open)"; }
+        } else {
+          const isSel = (picks[fam] || []).indexOf(i) >= 0, isStep = sn.indexOf(i) >= 0;
+          if (isSel)       { r = 5;   fill = "var(--sel)";  stroke = "var(--sel)"; }
+          else if (isStep) { r = 4.5; fill = "var(--step)"; stroke = "var(--step)"; }
+        }
+        const nOpen = under[i].filter(l => targetOpen.has(l)).length;
+        const comp = {};
+        for (const l of under[i]) comp[N[l].t] = (comp[N[l].t] || 0) + 1;
+        const top = Object.entries(comp).sort((a, b) => b[1] - a[1]).slice(0, 3)
+                    .map(e => e[0] + " " + e[1]).join(", ");
+        s += '<circle class="nd" data-id="' + i + '" cx="' + x + '" cy="' + y + '" r="' + r
+           + '" fill="' + fill + '" stroke="' + stroke + '" stroke-width="1.4"><title>node ' + i
+           + ' — ' + under[i].length + ' seqs' + (SW ? ', ' + nOpen + ' unassigned' : '')
+           + (N[i].sup ? ' — support ' + N[i].sup : '') + '\n' + top + '</title></circle>';
+      }
+    } else {
+      // leaves are selectable too: a tip handle, plus the label when it is highlighted
+      const stagedL = SW && stagedLeaves.has(i);
+      const pickedL = !SW && (picks[fam] || []).indexOf(i) >= 0;
+      let lr = lab ? 2.8 : 2, lf = "#fff", ls = lab ? col : "#cbc7c0";
+      if (stagedL || pickedL) { lr = 4; lf = stagedL ? "var(--step)" : "var(--sel)"; ls = lf; }
+      s += '<circle class="nd" data-id="' + i + '" cx="' + x + '" cy="' + y + '" r="' + lr
+         + '" fill="' + lf + '" stroke="' + ls + '" stroke-width="1.3"><title>'
+         + N[i].acc + ' — ' + N[i].t + (assigned[i] ? ' — assigned to ' + assigned[i].f : '')
+         + '</title></circle>';
+      if (lab)
+        s += '<text class="nd" data-id="' + i + '" x="' + (x + 7) + '" y="' + y
+           + '" font-size="9.5" fill="' + col + '">' + N[i].acc + '  ' + lab + '</text>';
+
+      // The evidence column, anchored past the furthest-right leaf label so it lines
+      // up down the page instead of stepping in and out with the tree.
+      const mr = N[i].m;
+      if (mr && (SW ? (RV || open.has(i) || stagedLeaves.has(i)) : !!lab)) {
+        const BW = 72, MID = BW / 2;
+        const top = Math.min(mr.length, 3);
+        const bh = top > 2 ? 2.2 : 3;
+        const rowY = j => y - (top - 1) * (bh + 1) / 2 + j * (bh + 1);
+        const ownOf = j => !SW && mr[j][0] === fam;
+
+        // --- the score column: the tick marks a typical family member at 1.0 ---
+        const fold = mr.length > 1 && mr[1][1] > 0 ? mr[0][1] / mr[1][1] : 99;
+        const gc = fold >= 1.5 ? "#1e8449" : fold >= 1.15 ? "#9a8c1b" : "#c0392b";
+        s += '<line x1="' + (COLX + MID) + '" y1="' + (y - 5) + '" x2="' + (COLX + MID)
+           + '" y2="' + (y + 5) + '" stroke="#d8d4cd" stroke-width="1"/>';
+        for (let j = 0; j < top; j++) {
+          const w2 = Math.max(1, Math.min(mr[j][1], 2) / 2 * BW);
+          const fillc = ownOf(j) ? (j === 0 ? "#1e8449" : "var(--inc)")
+                                 : (j === 0 ? gc : "#cfcbc3");
+          s += '<rect x="' + COLX + '" y="' + (rowY(j) - bh / 2) + '" width="' + w2
+             + '" height="' + bh + '" fill="' + fillc + '" rx="1"/>';
+        }
+        const stxt = mr.slice(0, top)
+          .map((e, j) => (ownOf(j) ? "▸" : "") + e[0] + " " + e[1].toFixed(2))
+          .join("  ");
+        s += '<text x="' + (COLX + BW + 7) + '" y="' + y + '" font-size="9" fill="#8a857c">'
+           + stxt + '</text>'
+           + '<text x="' + (COLX + SCOREW - 30) + '" y="' + y
+           + '" font-size="9" font-weight="600" fill="' + gc + '">'
+           + (fold >= 99 ? "—" : "×" + fold.toFixed(1)) + '</text>';
+
+      }
+    }
+  })(viewRoot);
+
+  s += '</svg>';
+  document.getElementById("svg").outerHTML = s;
+  document.getElementById("steplab").textContent = "step " + step;
+  document.getElementById("down").disabled = step === 0;
+  document.getElementById("fambits").style.display   = SW ? "none" : "";
+  document.getElementById("sweepbits").style.display = SW ? "" : "none";
+  const un = document.getElementById("unassign");
+  un.style.display = RV ? "" : "none";
+  un.disabled = !stagedLeaves.size;
+  document.getElementById("whole").parentElement.style.display = SW ? "none" : "";
+  const cm = document.getElementById("commit"), cl = document.getElementById("clearpick");
+  cm.disabled = !stagedLeaves.size;
+  cl.disabled = !pending.length;
+  cm.textContent = stagedLeaves.size ? "Add " + stagedLeaves.size + " → " + target : "Add";
+  cm.className = stagedLeaves.size ? "pri" : "";
+  RV ? reviewPanel(stagedLeaves)
+     : SW ? sweepPanel(open, stagedLeaves) : sidebar(sn, inc);
+}
+
+function comptable(ids){
+  const c = {};
+  for (const l of ids) c[N[l].t] = (c[N[l].t] || 0) + 1;
+  return Object.entries(c).sort((a, b) => b[1] - a[1]).map(function(e){
+    return '<tr><td class="r">' + e[1] + '</td><td>'
+      + (e[0].endsWith("*") ? '<span class="pill rep">' + e[0] + '</span>' : e[0]) + '</td></tr>';
+  }).join("");
+}
+
+function sidebar(sn, inc){
+  const sel = picks[fam] || [];
+  const selrows = sel.length ? sel.map(function(i){
+      const c = {};
+      for (const l of under[i]) c[N[l].t] = (c[N[l].t] || 0) + 1;
+      const top = Object.entries(c).sort((a, b) => b[1] - a[1]).slice(0, 4).map(e => e[0] + ":" + e[1]).join(", ");
+      return '<div class="selrow"><span><b>node ' + i + '</b> · ' + under[i].length + ' seqs<br>'
+        + '<span style="color:var(--dim);font-size:10.5px">' + top + '</span></span>'
+        + '<span class="x" data-del="' + i + '">×</span></div>';
+    }).join("")
+    : '<span style="color:var(--dim)">none yet — click a circle on the tree</span>';
+  const list = [...inc].sort((a, b) => N[a].t.localeCompare(N[b].t) || N[a].acc.localeCompare(N[b].acc))
+    .map(l => '<div>' + N[l].acc + ' <span style="color:var(--dim)">' + N[l].t + '</span></div>').join("");
+  document.getElementById("side").innerHTML =
+      '<div class="k">' + fam + ' — step ' + step + '</div>'
+    + '<div>' + sn.length + ' node' + (sn.length > 1 ? 's' : '') + ', <b>' + inc.size + '</b> sequences included</div>'
+    + '<div class="k">Composition</div><table>' + comptable([...inc]) + '</table>'
+    + '<div class="k">Score check for ' + fam + '</div>' + famRank([...inc])
+    + '<div class="k">Selected clades for ' + fam + '</div>' + selrows
+    + '<div class="k">Sequences at this step (' + inc.size + ')</div>'
+    + '<div class="seqs">' + list + '</div>';
+}
+
+function famRank(ids){
+  let mine = 0, other = 0, norank = 0;
+  const losing = {};
+  for (const l of ids) {
+    if (isRep(l)) continue;
+    const mr = N[l].m;
+    if (!mr) { norank++; continue; }
+    if (mr[0][0] === fam) mine++;
+    else { other++; losing[mr[0][0]] = (losing[mr[0][0]] || 0) + 1; }
+  }
+  if (!mine && !other) return '<span style="color:var(--dim)">no overlap sequences yet</span>';
+  const rows = Object.entries(losing).sort((a, b) => b[1] - a[1])
+    .map(e => '<tr><td class="r">' + e[1] + '</td><td>' + e[0] + '</td></tr>').join("");
+  return '<div><b style="color:var(--sel)">' + mine + '</b> rank best in ' + fam
+    + ', <b style="color:' + (other ? "var(--rep)" : "var(--dim)") + '">' + other
+    + '</b> rank better elsewhere' + (norank ? ', ' + norank + ' no rank' : '') + '</div>'
+    + (rows ? '<table>' + rows + '</table>' : '');
+}
+
+function rankSummary(open){
+  const best = {}, conf = {clear: 0, near: 0, tied: 0, none: 0};
+  for (const l of open) {
+    const mr = N[l].m;
+    if (!mr) { conf.none++; continue; }
+    best[mr[0][0]] = (best[mr[0][0]] || 0) + 1;
+    const g = mr.length > 1 && mr[1][1] > 0 ? mr[0][1] / mr[1][1] : 99;
+    conf[g >= 1.5 ? "clear" : g >= 1.15 ? "near" : "tied"]++;
+  }
+  const rows = Object.entries(best).sort((a, b) => b[1] - a[1])
+    .map(e => '<tr><td class="r">' + e[1] + '</td><td>' + e[0] + '</td></tr>').join("");
+  return '<table>' + rows + '</table>'
+    + '<div class="sub" style="margin-top:4px">fold margin over runner-up: '
+    + '<b style="color:#1e8449">' + conf.clear + '</b> clear (≥1.5×), '
+    + '<b style="color:#9a8c1b">' + conf.near + '</b> near (1.15–1.5×), '
+    + '<b style="color:#c0392b">' + conf.tied + '</b> tied (&lt;1.15×)</div>';
+}
+
+function reviewPanel(staged){
+  const byFamily = {}, bySrc = {};
+  let undecided = 0;
+  for (const l of OVERLAP) {
+    const a = assigned[l];
+    if (!a) { undecided++; continue; }
+    byFamily[a.f] = (byFamily[a.f] || 0) + 1;
+    bySrc[a.src] = (bySrc[a.src] || 0) + 1;
+  }
+  const rows = Object.entries(byFamily).sort((a, b) => b[1] - a[1])
+    .map(e => '<tr><td class="r">' + e[1] + '</td><td>' + e[0] + '</td></tr>').join("");
+  const src = Object.entries(bySrc).sort((a, b) => b[1] - a[1])
+    .map(e => e[1] + " " + e[0]).join(", ");
+
+  const stagedBlock = staged.size
+    ? '<div class="k" style="color:var(--step)">Staged — not yet applied</div>'
+      + '<div>' + pending.length + ' node' + (pending.length > 1 ? 's' : '') + ', <b>'
+      + staged.size + '</b> sequences</div>'
+      + '<div class="sub"><b>Add</b> moves them to <b style="color:var(--open)">'
+      + target + '</b>, <b>Unassign</b> leaves them out of every family</div>'
+      + '<table>' + comptable([...staged]) + '</table>'
+    : '<span style="color:var(--dim)">click a clade or a leaf to change its assignment</span>';
+
+  const manual = Object.keys(override);
+  const chip = (a, text, colour) =>
+      '<div class="selrow"><span>' + a + ' <span style="color:' + colour + '">'
+      + text + '</span></span><span class="x" data-unoverride="' + a + '">×</span></div>';
+  const changes = manual.length
+    ? manual.filter(a => override[a]).map(a => chip(a, "→ " + override[a], "var(--sel)")).join("")
+      + manual.filter(a => !override[a]).map(a => chip(a, "left out", "var(--rep)")).join("")
+    : '<span style="color:var(--dim)">none yet</span>';
+
+  const list = OVERLAP.slice().sort(function(a, b){
+      const fa = assigned[a] ? assigned[a].f : "~", fb = assigned[b] ? assigned[b].f : "~";
+      return fa.localeCompare(fb) || N[a].acc.localeCompare(N[b].acc);
+    }).map(function(l){
+      const a = assigned[l];
+      return '<div>' + N[l].acc + ' <span style="color:var(--dim)">' + N[l].t + '</span> '
+           + (a ? '<span style="color:var(--sel)">→ ' + a.f + '</span>'
+                : '<span style="color:var(--rep)">left out</span>') + '</div>';
+    }).join("");
+
+  document.getElementById("side").innerHTML =
+      '<div class="k">Review every decision</div>'
+    + '<div><b>' + (OVERLAP.length - undecided) + '</b> of ' + OVERLAP.length
+    + ' assigned, <b style="color:var(--rep)">' + undecided + '</b> left out</div>'
+    + '<div class="bar"><i style="width:'
+    + (100 * (OVERLAP.length - undecided) / OVERLAP.length) + '%"></i></div>'
+    + '<div class="sub">' + src + '</div>'
+    + stagedBlock
+    + '<div class="k">Changed in review (' + manual.length + ')</div>' + changes
+    + '<div class="k">By family</div><table>' + rows + '</table>'
+    + '<div class="k">All ' + OVERLAP.length + ' contested sequences</div>'
+    + '<div class="seqs">' + list + '</div>';
+}
+
+function sweepPanel(open, staged){
+  const tot = OVERLAP.length, done = tot - open.size;
+  const stagedBlock = staged.size
+    ? '<div class="k" style="color:var(--step)">Staged — not yet added</div>'
+      + '<div>' + pending.length + ' node' + (pending.length > 1 ? 's' : '') + ', <b>' + staged.size
+      + '</b> sequences → <b style="color:var(--open)">' + target + '</b></div>'
+      + '<div class="sub">press <b>Add</b> to write them, or Clear to drop the staging</div>'
+      + '<table>' + comptable([...staged]) + '</table>'
+    : '';
+  const bySrc = {clade: 0, sweep: 0};
+  for (const l of OVERLAP) if (assigned[l]) bySrc[assigned[l].src]++;
+  const list = [...open].sort((a, b) => N[a].t.localeCompare(N[b].t) || N[a].acc.localeCompare(N[b].acc))
+    .map(l => '<div>' + N[l].acc + ' <span style="color:var(--dim)">' + N[l].t + '</span></div>').join("");
+  const swAcc = Object.keys(sweep);
+  const swRows = swAcc.length
+    ? Object.entries(swAcc.reduce(function(m, a){ (m[sweep[a].f] = m[sweep[a].f] || []).push(a); return m; }, {}))
+        .sort((a, b) => b[1].length - a[1].length).map(function(e){
+          return '<div class="selrow"><span><b>' + e[0] + '</b> · ' + e[1].length + ' seqs</span>'
+               + '<span class="x" data-unsweep="' + e[0] + '">×</span></div>'; }).join("")
+    : '<span style="color:var(--dim)">nothing assigned in sweep yet</span>';
+  document.getElementById("side").innerHTML =
+      '<div class="k">Unassigned sweep</div>'
+    + '<div><b>' + done + '</b> of ' + tot + ' overlaps assigned — <b style="color:var(--open)">'
+    + open.size + '</b> left</div>'
+    + '<div class="bar"><i style="width:' + (100 * done / tot) + '%"></i></div>'
+    + '<div class="sub">' + bySrc.clade + ' from family clades, ' + bySrc.sweep + ' from sweep</div>'
+    + stagedBlock
+    + '<div class="k">Assigned in sweep</div>' + swRows
+    + '<div class="k">Best family by median-normalized score</div>' + rankSummary(open)
+    + '<div class="k">Still unassigned (' + open.size + ')</div><table>' + comptable([...open]) + '</table>'
+    + '<div class="seqs" style="margin-top:6px">' + list + '</div>';
+}
+
+function famcol(){
+  const open = unassigned().length;
+  const decided = OVERLAP.length - open;
+  let h = '<div class="fam sweep ' + (mode === "sweep" ? "on" : "") + '" data-sweep="1">'
+        + '<span>◆ Unassigned</span><span class="n open">' + open + '</span></div>'
+        + '<div class="fam sweep ' + (mode === "review" ? "on" : "") + '" data-review="1">'
+        + '<span>◆ Review all</span><span class="n has">' + decided + '</span></div>';
+  h += DATA.families.map(function(f){
+    const n = (picks[f] || []).length;
+    const sw = Object.keys(sweep).filter(a => sweep[a].f === f).length;
+    let tot = 0;
+    for (const l of OVERLAP) if (assigned[l] && assigned[l].f === f) tot++;
+    return '<div class="fam ' + (mode === "family" && f === fam ? "on" : "") + '" data-f="' + f + '">'
+      + '<span>' + f + '</span><span class="n ' + (n || sw ? "has" : "") + '">'
+      + (n || sw ? tot : "—") + '</span></div>';
+  }).join("");
+  document.getElementById("famcol").innerHTML = h;
+}
+
+/* ---------- interaction ---------- */
+document.addEventListener("click", function(e){
+  const sw = e.target.closest("[data-sweep]");
+  if (sw) { mode = "sweep"; pending = []; famcol(); render(); return; }
+  const rv = e.target.closest("[data-review]");
+  if (rv) { mode = "review"; pending = []; famcol(); render(); return; }
+  const f = e.target.closest(".fam[data-f]");
+  if (f) { mode = "family"; fam = f.dataset.f; step = 0; famcol(); render(); return; }
+
+  const c = e.target.closest(".nd");
+  if (c) {
+    const i = +c.dataset.id;
+    if (mode === "sweep" || mode === "review") {
+      const j = pending.indexOf(i);                 // stage only; Add commits
+      if (j >= 0) pending.splice(j, 1);
+      else if (under[i].some(sweepable)) pending.push(i);
+      render(); return;
+    } else {
+      picks[fam] = picks[fam] || [];
+      const j = picks[fam].indexOf(i);
+      if (j >= 0) picks[fam].splice(j, 1); else picks[fam].push(i);
+    }
+    save(); famcol(); render(); return;
+  }
+  const d = e.target.closest("[data-del]");
+  if (d) {
+    const i = +d.dataset.del;
+    picks[fam] = (picks[fam] || []).filter(z => z !== i);
+    save(); famcol(); render(); return;
+  }
+  const ov = e.target.closest("[data-unoverride]");
+  if (ov) { delete override[ov.dataset.unoverride]; save(); famcol(); render(); return; }
+  const u = e.target.closest("[data-unsweep]");
+  if (u) {
+    const f2 = u.dataset.unsweep;
+    for (const a in sweep) if (sweep[a].f === f2) delete sweep[a];
+    save(); famcol(); render();
+  }
+});
+document.getElementById("up").onclick = function(){ step++; render(); };
+document.getElementById("down").onclick = function(){ if (step > 0) { step--; render(); } };
+document.getElementById("phylo").onchange = function(e){ phylo = e.target.checked; render(); };
+document.getElementById("whole").onchange = function(e){ whole = e.target.checked; render(); };
+document.getElementById("collapse").onchange = function(e){ collapse = e.target.checked; render(); };
+document.getElementById("target").innerHTML =
+  DATA.families.map(f => '<option>' + f + '</option>').join("");
+document.getElementById("target").onchange = function(e){ target = e.target.value; render(); };
+function pendingLeaves(){
+  const s = new Set();
+  for (const i of pending)
+    for (const l of under[i])
+      if (sweepable(l)) s.add(l);
+  return s;
+}
+document.getElementById("commit").onclick = function(){
+  const s = pendingLeaves();
+  if (!s.size) return;
+  for (const l of s) {
+    if (mode === "review") override[N[l].acc] = target;      // outranks clade and sweep
+    else {
+      // Picking a sequence that had been left out is a decision to stop leaving it
+      // out, so the exclusion goes. Without this the override pass would delete the
+      // assignment again on the very redraw that follows, and the label would not
+      // move. The exclusion still outranks a clade that merely covers the sequence;
+      // only choosing that sequence itself clears it.
+      if (override[N[l].acc] === null) delete override[N[l].acc];
+      sweep[N[l].acc] = {f: target, node: pending.find(i => underSet[i].has(l))};
+    }
+  }
+  pending = [];
+  save(); famcol(); render();
+};
+document.getElementById("unassign").onclick = function(){
+  const s = pendingLeaves();
+  if (!s.size) return;
+  for (const l of s) override[N[l].acc] = null;   // deliberately left out
+  pending = [];
+  save(); famcol(); render();
+};
+document.getElementById("clearpick").onclick = function(){ pending = []; render(); };
+document.addEventListener("keydown", function(e){
+  if (e.target.tagName === "INPUT" || e.target.tagName === "SELECT") return;
+  if (mode !== "family") return;
+  if (e.key === "ArrowUp") { e.preventDefault(); step++; render(); }
+  if (e.key === "ArrowDown" && step > 0) { e.preventDefault(); step--; render(); }
+});
+document.getElementById("exp").onclick = function(){
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([tsv()], {type: "text/tab-separated-values"}));
+  a.download = "mrca_selections.tsv";
+  a.click();
+};
+
+recompute(); famcol(); render();
+</script></body></html>

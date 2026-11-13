@@ -1,0 +1,84 @@
+study	their_family	genome	status	count	source	evidence
+Krishnan et al. 2014 (sponge)	Glutamate	Amphimedon queenslandica	present	33	Abstract (PMC4302439): "Glutamate (33), Rhodopsin (126), Adhesion (40) and Frizzled (3)"	
+Krishnan et al. 2014 (sponge)	Rhodopsin	Amphimedon queenslandica	present	126	Abstract (PMC4302439), as above	
+Krishnan et al. 2014 (sponge)	Adhesion	Amphimedon queenslandica	present	40	Abstract (PMC4302439), as above	
+Krishnan et al. 2014 (sponge)	Frizzled	Amphimedon queenslandica	present	3	Abstract (PMC4302439), as above	
+Krishnan et al. 2014 (sponge)	Secretin	Amphimedon queenslandica	absent	0	Results (PMC4302439): "However, we did not find Secretin family receptors in the sponge genome."	
+Niimura 2009	Olfactory	Branchiostoma floridae	present	43	Table 1 (PMC2817399), total OR genes	
+Niimura 2009	Olfactory	Ciona intestinalis	absent	0	Table 1 (PMC2817399), row "Ciona intestinalis, Ciona savignyi"	
+Niimura 2009	Olfactory	Ciona savignyi	absent	0	Table 1 (PMC2817399), row "Ciona intestinalis, Ciona savignyi"	
+Niimura 2009	Olfactory	Oikopleura dioica	absent	0	Table 1 (PMC2817399)	
+Niimura 2009	Olfactory	Petromyzon marinus	present	67	Table 1 (PMC2817399)	
+Niimura 2009	Olfactory	Callorhinchus milii	present	2	Table 1 (PMC2817399)	
+Niimura 2009	Olfactory	Danio rerio	present	176	Table 1 (PMC2817399)	
+Niimura 2009	Olfactory	Oryzias latipes	present	98	Table 1 (PMC2817399)	
+Niimura 2009	Olfactory	Gasterosteus aculeatus	present	159	Table 1 (PMC2817399)	
+Niimura 2009	Olfactory	Takifugu rubripes	present	125	Table 1 (PMC2817399)	
+Niimura 2009	Olfactory	Tetraodon nigroviridis	present	34	Table 1 (PMC2817399)	
+Niimura 2009	Olfactory	Xenopus tropicalis	present	1638	Table 1 (PMC2817399)	
+Niimura 2009	Olfactory	Anolis carolinensis	present	146	Table 1 (PMC2817399)	
+Niimura 2009	Olfactory	Gallus gallus	present	433	Table 1 (PMC2817399)	
+Grus & Zhang 2009	V1R	Petromyzon marinus	present	3	Supplementary File 9 alignment: lamprey contigs Contig15650.3, Contig26060.4, Contig59695.1	
+Grus & Zhang 2009	V2R	Petromyzon marinus	absent	0	Results, p. 411 ("V2Rs from Early Diverging Vertebrates"): "No V2Rs were found in the sea lamprey genome" (msn262_paper.pdf)	
+Grus & Zhang 2009	V1R	Callorhinchus milii	present	2	Supplementary File 9 alignment: elephant shark contigs AAVX01055762.1, AAVX01177037.1	
+Grus & Zhang 2009	V2R	Callorhinchus milii	present	32	Supplementary Data File 2: 32 partial V2R sequences from the elephant shark genome	
+Prabhu & Eichinger 2006	cAMP	Dictyostelium discoideum	present	12	Abstract: "the four well-studied cAMP receptors" and "eight additional cAMP receptor-like proteins"	
+Prabhu & Eichinger 2006	Secretin-like	Dictyostelium discoideum	present	1	Abstract: "one secretin-like ... receptor"	
+Prabhu & Eichinger 2006	GABAB	Dictyostelium discoideum	present	17	Abstract: "17 GABA B-like"; Table 1 gives dictyBase IDs	
+Prabhu & Eichinger 2006	Frizzled	Dictyostelium discoideum	present	25	Abstract: "25 Frizzled-like receptors"; Table 2 gives dictyBase IDs	
+Behrens et al. 2023	T2R	Amblyraja radiata	present	1	Table S1 sheet 2 (Ambrad1)	named genes; their sequences appear only in an unlabelled SI alignment
+Behrens et al. 2023	T2R	Chiloscyllium plagiosum	present	1	Table S1 sheet 2 (Chipla-T2R1)	named genes; their sequences appear only in an unlabelled SI alignment
+Behrens et al. 2023	T2R	Chiloscyllium punctatum	present	1	Table S1 sheet 2 (Chipun-T2R1)	named genes; their sequences appear only in an unlabelled SI alignment
+Behrens et al. 2023	T2R	Ginglymostoma cirratum	present	1	Table S1 sheet 2 (Gincir-T2R1)	named genes; their sequences appear only in an unlabelled SI alignment
+Behrens et al. 2023	T2R	Hemiscyllium ocellatum	present	1	Table S1 sheet 2 (Hemoce-T2R1)	named genes; their sequences appear only in an unlabelled SI alignment
+Behrens et al. 2023	T2R	Leucoraja erinacea	present	1	Table S1 sheet 2 (Leueri-T2R1.ps, pseudogene)	named genes; their sequences appear only in an unlabelled SI alignment
+Behrens et al. 2023	T2R	Pristis pectinata	present	1	Table S1 sheet 2 (Pripec-T2R1)	named genes; their sequences appear only in an unlabelled SI alignment
+Behrens et al. 2023	T2R	Rhincodon typus	present	1	Table S1 sheet 2 (Rhityp-T2R1)	named genes; their sequences appear only in an unlabelled SI alignment
+Behrens et al. 2023	T2R	Scyliorhinus canicula	present	1	Table S1 sheet 2 (Scycan-T2R1)	named genes; their sequences appear only in an unlabelled SI alignment
+Behrens et al. 2023	T2R	Scyliorhinus torazame	present	1	Table S1 sheet 2 (Scytor-T2R1)	named genes; their sequences appear only in an unlabelled SI alignment
+Behrens et al. 2023	T2R	Sphyrna mokarran	present	1	Table S1 sheet 2 (Sphmok-T2R1)	named genes; their sequences appear only in an unlabelled SI alignment
+Behrens et al. 2023	T2R	Stegostoma fasciatum	present	1	Table S1 sheet 2 (Stefas-T2R1)	named genes; their sequences appear only in an unlabelled SI alignment
+Behrens et al. 2023	T2R	Callorhinchus milii	absent	0	Table S1 sheet 1 lists it as searched; no T2R in sheet 2	
+Behrens et al. 2023	T2R	Carcharodon carcharias	absent	0	Table S1 sheet 1 lists it as searched; no T2R in sheet 2	
+Behrens et al. 2023	T2R	Hydrolagus affinis	absent	0	Table S1 sheet 1 lists it as searched; no T2R in sheet 2	
+Behrens et al. 2023	T2R	Isurus oxyrinchus	absent	0	Table S1 sheet 1 lists it as searched; no T2R in sheet 2	
+Behrens et al. 2023	T2R	Squalus suckleyi	absent	0	Table S1 sheet 1 lists it as searched; no T2R in sheet 2	
+de Mendoza et al. 2016	Mth	Acropora digitifera	absent	0	Table S1 "Presence of Mth GPCRs": no	
+de Mendoza et al. 2016	Mth	Adineta vaga	absent	0	Table S1: no	
+de Mendoza et al. 2016	Mth	Aedes aegypti	present		Table S1: yes	
+de Mendoza et al. 2016	Mth	Amphimedon queenslandica	absent	0	Table S1: no	
+de Mendoza et al. 2016	Mth	Apis mellifera	present		Table S1: yes	
+de Mendoza et al. 2016	Mth	Bombyx mori	present		Table S1: yes	
+de Mendoza et al. 2016	Mth	Branchiostoma belcheri	present		Table S1: yes	
+de Mendoza et al. 2016	Mth	Caenorhabditis elegans	absent	0	Table S1: no	
+de Mendoza et al. 2016	Mth	Callorhinchus milii	absent	0	Table S1: no	
+de Mendoza et al. 2016	Mth	Capitella teleta	present		Table S1: yes	
+de Mendoza et al. 2016	Mth	Capsaspora owczarzaki	absent	0	Table S1: no	
+de Mendoza et al. 2016	Mth	Ciona intestinalis	absent	0	Table S1: no	
+de Mendoza et al. 2016	Mth	Crassostrea gigas	present		Table S1: yes	
+de Mendoza et al. 2016	Mth	Creolimax fragrantissima	absent	0	Table S1: no	
+de Mendoza et al. 2016	Mth	Danio rerio	absent	0	Table S1: no	
+de Mendoza et al. 2016	Mth	Daphnia pulex	present		Table S1: yes	
+de Mendoza et al. 2016	Mth	Drosophila melanogaster	present		Table S1: yes	
+de Mendoza et al. 2016	Mth	Echinococcus multilocularis	absent	0	Table S1: no	
+de Mendoza et al. 2016	Mth	Helobdella robusta	absent	0	Table S1: no	
+de Mendoza et al. 2016	Mth	Homo sapiens	absent	0	Table S1: no	
+de Mendoza et al. 2016	Mth	Hydra magnipapillata	absent	0	Table S1: no	
+de Mendoza et al. 2016	Mth	Lottia gigantea	present		Table S1: yes	
+de Mendoza et al. 2016	Mth	Ministeria vibrans	absent	0	Table S1: no	
+de Mendoza et al. 2016	Mth	Mnemiopsis leidyi	absent	0	Table S1: no	
+de Mendoza et al. 2016	Mth	Monosiga brevicollis	absent	0	Table S1: no	
+de Mendoza et al. 2016	Mth	Nematostella vectensis	present		Table S1: yes	
+de Mendoza et al. 2016	Mth	Oscarella carmela	absent	0	Table S1: no	
+de Mendoza et al. 2016	Mth	Petromyzon marinus	absent	0	Table S1: no	
+de Mendoza et al. 2016	Mth	Saccoglossus kowalevskii	present		Table S1: yes	
+de Mendoza et al. 2016	Mth	Salpingoeca rosetta	absent	0	Table S1: no	
+de Mendoza et al. 2016	Mth	Schistosoma mansoni	absent	0	Table S1: no	
+de Mendoza et al. 2016	Mth	Sphaeroforma arctica	absent	0	Table S1: no	
+de Mendoza et al. 2016	Mth	Strigamia maritima	present		Table S1: yes	
+de Mendoza et al. 2016	Mth	Strongylocentrotus purpuratus	present		Table S1: yes	
+de Mendoza et al. 2016	Mth	Sycon ciliatum	absent	0	Table S1: no	
+de Mendoza et al. 2016	Mth	Tetranychus urticae	absent	0	Table S1: no	
+de Mendoza et al. 2016	Mth	Tribolium castaneum	present		Table S1: yes	
+de Mendoza et al. 2016	Mth	Trichinella spiralis	absent	0	Table S1: no	
+de Mendoza et al. 2016	Mth	Trichoplax adhaerens	absent	0	Table S1: no	

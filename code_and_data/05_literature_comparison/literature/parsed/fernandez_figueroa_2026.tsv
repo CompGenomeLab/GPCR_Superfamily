@@ -1,0 +1,208 @@
+kind	study	their_family	genome	status	count	source	evidence	seq_id	sequence	ids
+sequence	Fernandez-Figueroa et al. 2026	plant candidate, not a canonical GPCR	Arabidopsis thaliana					CAND 1		Q9FVT5
+sequence	Fernandez-Figueroa et al. 2026	plant candidate, not a canonical GPCR	Arabidopsis thaliana					CAND 2		Q94AH1
+sequence	Fernandez-Figueroa et al. 2026	plant candidate, not a canonical GPCR	Arabidopsis thaliana					CAND 3		Q945Q2
+sequence	Fernandez-Figueroa et al. 2026	plant candidate, not a canonical GPCR	Arabidopsis thaliana					CAND 4		B9DFZ1
+sequence	Fernandez-Figueroa et al. 2026	plant candidate, not a canonical GPCR	Arabidopsis thaliana					CAND 5		B9DGA1
+sequence	Fernandez-Figueroa et al. 2026	plant candidate, not a canonical GPCR	Arabidopsis thaliana					CAND 8		F4K2U8
+sequence	Fernandez-Figueroa et al. 2026	plant candidate, not a canonical GPCR	Arabidopsis thaliana					CAND 9		Q949Z2
+sequence	Fernandez-Figueroa et al. 2026	plant candidate, not a canonical GPCR	Arabidopsis thaliana					CAND 10		Q9SFF8
+sequence	Fernandez-Figueroa et al. 2026	plant candidate, not a canonical GPCR	Arabidopsis thaliana					RGS ARATH		Q8H1F2
+sequence	Fernandez-Figueroa et al. 2026	plant candidate, not a canonical GPCR	Arabidopsis thaliana					TOM 1		Q9FEG2
+sequence	Fernandez-Figueroa et al. 2026	plant candidate, not a canonical GPCR	Arabidopsis thaliana					HHP2		Q84N34
+sequence	Fernandez-Figueroa et al. 2026	plant candidate, not a canonical GPCR	Arabidopsis thaliana					THH1		Q948R8
+sequence	Fernandez-Figueroa et al. 2026	GCR1 (canonical GPCR)	Arabidopsis thaliana					GCR1		O04714
+sequence	Fernandez-Figueroa et al. 2026	plant candidate, not a canonical GPCR	Arabidopsis thaliana					GTG1		Q9XIP7
+sequence	Fernandez-Figueroa et al. 2026	plant candidate, not a canonical GPCR	Arabidopsis thaliana					GTG2		Q0WQG8
+sequence	Fernandez-Figueroa et al. 2026	plant candidate, not a canonical GPCR	Arabidopsis thaliana					MLO5		O22815
+sequence	Fernandez-Figueroa et al. 2026	plant candidate, not a canonical GPCR	Arabidopsis thaliana					MLO2		Q9SXB6
+sequence	Fernandez-Figueroa et al. 2026	plant candidate, not a canonical GPCR	Arabidopsis thaliana					CAND 6		Q9LZ39
+sequence	Fernandez-Figueroa et al. 2026	plant candidate, not a canonical GPCR	Arabidopsis thaliana					CAND 7		F4JY11
+sequence	Fernandez-Figueroa et al. 2026	plant candidate, not a canonical GPCR	Arabidopsis thaliana					Lung 7		Q9C5T6
+sequence	Fernandez-Figueroa et al. 2026	plant candidate, not a canonical GPCR	Arabidopsis thaliana					TOM 3		Q9ZUM2
+sequence	Fernandez-Figueroa et al. 2026	Class A - Rhodopsin						CCR5 HUMAN		P51681
+sequence	Fernandez-Figueroa et al. 2026	Class A - Rhodopsin						P2Y12 HUMAN		Q9H244
+sequence	Fernandez-Figueroa et al. 2026	Class A - Rhodopsin						OPSD DANRE		P35359
+sequence	Fernandez-Figueroa et al. 2026	Class A - Rhodopsin						DOPR4 CAEEL		Q18775
+sequence	Fernandez-Figueroa et al. 2026	Class A - Rhodopsin						NTR1 CAEEL		O02300
+sequence	Fernandez-Figueroa et al. 2026	Class B - Secretin like/Adhesion						LRLA DICDI		Q54MC6
+sequence	Fernandez-Figueroa et al. 2026	Class E						CRLA DICDI		Q54U75
+sequence	Fernandez-Figueroa et al. 2026	Class E						CAR2 DICDI		P34907
+sequence	Fernandez-Figueroa et al. 2026	Class B - Secretin like/Adhesion						MTH DROME		O97148
+sequence	Fernandez-Figueroa et al. 2026	Class E						CRLE DICDI		Q54LY7
+sequence	Fernandez-Figueroa et al. 2026	Class B - Secretin like/Adhesion						GPR157 HUMAN		Q5UAW9
+sequence	Fernandez-Figueroa et al. 2026	Class E						A0D9W5 PARTE		A0D9W5
+sequence	Fernandez-Figueroa et al. 2026	Class B - Secretin like/Adhesion						CALRL DANRE		Q68EK2
+sequence	Fernandez-Figueroa et al. 2026	Class B - Secretin like/Adhesion						GHRHR HUMAN		Q02643
+sequence	Fernandez-Figueroa et al. 2026	Class B - Secretin like/Adhesion						GLR DANRE		E7FCX8
+sequence	Fernandez-Figueroa et al. 2026	Class B - Secretin like/Adhesion						PDFR1 CAEEL		Q09460
+sequence	Fernandez-Figueroa et al. 2026	Class B - Secretin like/Adhesion						ADGRA1 HUMAN		Q86SQ6
+sequence	Fernandez-Figueroa et al. 2026	Class F - Frizzled						FZD4 HUMAN		Q9ULV1
+sequence	Fernandez-Figueroa et al. 2026	Class F - Frizzled						FRIZ2 CAEEL		G5ECQ2
+sequence	Fernandez-Figueroa et al. 2026	Class F - Smoothened						SMO HUMAN		Q99835
+sequence	Fernandez-Figueroa et al. 2026	Class F - Frizzled						FSCF DICDI		Q1ZXB0
+sequence	Fernandez-Figueroa et al. 2026	Class C - Metabotropic Glutamate						CASR DANRE		A0A8M1P4E9
+sequence	Fernandez-Figueroa et al. 2026	Class C - Metabotropic Glutamate						GPC6A HUMAN		Q5T6X5
+sequence	Fernandez-Figueroa et al. 2026	Class C - Metabotropic Glutamate						GRM DROME		P91685
+sequence	Fernandez-Figueroa et al. 2026	Class C - Metabotropic Glutamate						TS1R3 MOUSE		Q925D8
+sequence	Fernandez-Figueroa et al. 2026	Class C - Metabotropic Glutamate						RAI3 HUMAN		Q8NFJ5
+sequence	Fernandez-Figueroa et al. 2026	Class C - Metabotropic Glutamate						GABR1 CAEEL		H2L0Q3
+sequence	Fernandez-Figueroa et al. 2026	Class D						MAM2 SCHPO		Q00619
+sequence	Fernandez-Figueroa et al. 2026	Class D						STE2 YEAST		D6VTK4
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Dictyostelium discoideum					DDB_G0286301		DDB_G0286301
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Dictyostelium discoideum					DDB_G0279599		DDB_G0279599
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Dictyostelium discoideum					DDB_G0290185		DDB_G0290185
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Dictyostelium discoideum					DDB_G0277831		DDB_G0277831
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Dictyostelium discoideum					DDB_G0277829		DDB_G0277829
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Dictyostelium discoideum					DDB_G0273397		DDB_G0273397
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Dictyostelium discoideum					DDB_G0273533		DDB_G0273533
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Dictyostelium discoideum					DDB_G0288179		DDB_G0288179
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Dictyostelium discoideum					DDB_G0283579		DDB_G0283579
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Dictyostelium discoideum					DDB_G0280983		DDB_G0280983
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Dictyostelium discoideum					DDB_G0289395		DDB_G0289395
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Dictyostelium discoideum					DDB_G0283619		DDB_G0283619
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Danio rerio					ENSDARG00000086911		ENSDARG00000086911
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Danio rerio					ENSDARG00000034975		ENSDARG00000034975
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Danio rerio					ENSDARG00000077155		ENSDARG00000077155
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Nematostella vectensis					LOC5506223		LOC5506223
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Gallus gallus					ENSGALG00010017421		ENSGALG00010017421
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Gallus gallus					ENSGALG00010025924		ENSGALG00010025924
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Branchiostoma lanceolatum					LOC136443611		LOC136443611
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Ciona intestinalis					ENSCING00000009739		ENSCING00000009739
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Amphimedon queenslandica					LOC100631476		LOC100631476
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Amphimedon queenslandica					LOC105312306		LOC105312306
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Amphimedon queenslandica					LOC105312993		LOC105312993
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Amphimedon queenslandica					LOC109581193		LOC109581193
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Amphimedon queenslandica					LOC105313223		LOC105313223
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Amphimedon queenslandica					LOC105312309		LOC105312309
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Amphimedon queenslandica					LOC105312996		LOC105312996
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Amphimedon queenslandica					LOC109582643		LOC109582643
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Amphimedon queenslandica					LOC105312308		LOC105312308
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Amphimedon queenslandica					LOC105316807		LOC105316807
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Amphimedon queenslandica					LOC109580382		LOC109580382
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Amphimedon queenslandica					LOC109588886		LOC109588886
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Amphimedon queenslandica					LOC109580364		LOC109580364
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Amphimedon queenslandica					LOC105313354		LOC105313354
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Amphimedon queenslandica					LOC109582607		LOC109582607
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Amphimedon queenslandica					LOC105312979		LOC105312979
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Amphimedon queenslandica					LOC105312973		LOC105312973
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Amphimedon queenslandica					LOC105312969		LOC105312969
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Amphimedon queenslandica					LOC105313353		LOC105313353
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Amphimedon queenslandica					LOC105312972		LOC105312972
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Amphimedon queenslandica					LOC109582600		LOC109582600
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Amphimedon queenslandica					LOC109582601		LOC109582601
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Amphimedon queenslandica					LOC100638453		LOC100638453
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Anneissia japonica					LOC117105817		LOC117105817
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Haliotis rufescens					LOC124113086		LOC124113086
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Haliotis rufescens					LOC124136045		LOC124136045
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Haliotis rufescens					LOC124111075		LOC124111075
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Gigantopelta aegis					LOC121374771		LOC121374771
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Gigantopelta aegis					LOC121388604		LOC121388604
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Gigantopelta aegis					LOC121369176		LOC121369176
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Gigantopelta aegis					LOC121375575		LOC121375575
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Hydra vulgaris					LOC101241071		LOC101241071
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Hydra vulgaris					LOC105850925		LOC105850925
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Hydra vulgaris					LOC101235513		LOC101235513
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Podarcis muralis					ENSPMRG00000013539		ENSPMRG00000013539
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Podarcis muralis					ENSPMRG00000009994		ENSPMRG00000009994
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Oryctolagus cuniculus					ENSOCUG00000025476		ENSOCUG00000025476
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Oryctolagus cuniculus					ENSOCUG00000007214		ENSOCUG00000007214
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Homo sapiens					ENSG00000198270		ENSG00000198270
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Homo sapiens					ENSG00000180758		ENSG00000180758
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Callithrix jacchus					ENSCJAG00000074232		ENSCJAG00000074232
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Callithrix jacchus					ENSCJAG00000012100		ENSCJAG00000012100
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Gorilla gorilla					ENSGGOG00000042706		ENSGGOG00000042706
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Gorilla gorilla					ENSGGOG00000003794		ENSGGOG00000003794
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Mus musculus					ENSMUSG00000047875		ENSMUSG00000047875
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Mus musculus					ENSMUSG00000029452		ENSMUSG00000029452
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Thecamonas trahens ATCC 50062					AMSG_01609		AMSG_01609
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Candida albicans SC5314					C5_01250W_A		C5_01250W_A
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Salpingoeca rosetta					PTSG_10672		PTSG_10672
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Monosiga brevicollis					MONBRDRAFT_33227		MONBRDRAFT_33227
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Capsaspora owczarzaki ATCC 30864					CAOG_000174		CAOG_000174
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Capsaspora owczarzaki ATCC 30864					CAOG_000965		CAOG_000965
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Galdieria sulphuraria					Gasu_19940		Gasu_19940
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Paramecium tetraurelia					GSPATT00023231001		GSPATT00023231001
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Ectocarpus siliculosus					Esi_0028_0043		Esi_0028_0043
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Ectocarpus siliculosus					Esi_0165_0058		Esi_0165_0058
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Phytophthora sojae					PHYSODRAFT_388504		PHYSODRAFT_388504
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Phytophthora parasitica					F443_05502		F443_05502
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Phytophthora parasitica					F443_11519		F443_11519
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Achlya hypogyna ATCC 48635					ACHHYP_00504		ACHHYP_00504
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Bigelowiella natans					estExt_fgenesh1_pg.C_10274		estExt_fgenesh1_pg.C_10274
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Reticulomyxa filosa					RFI_28304		RFI_28304
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Chara braunii					CBR_g36835		CBR_g36835
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Physcomitrium patens					Pp3c15_15980		Pp3c15_15980
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Physcomitrium patens					Pp3c9_15980		Pp3c9_15980
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Marchantia polymorpha					MARPO_0073s0070		MARPO_0073s0070
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Selaginella moellendorffii					SELMODRAFT_187839		SELMODRAFT_187839
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Selaginella moellendorffii					SELMODRAFT_175383		SELMODRAFT_175383
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Selaginella moellendorffii					SELMODRAFT_89633		SELMODRAFT_89633
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Ginkgo biloba					KM399214		KM399214
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Amborella trichopoda					AMTR_s00024p00244020		AMTR_s00024p00244020
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Amborella trichopoda					ATR0684G160		ATR0684G160
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Erythranthe guttata					Migut.E01785		Migut.E01785
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Daucus carota					DCAR_003726		DCAR_003726
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Cynara cardunculus					Ccrd_009701		Ccrd_009701
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Arabidopsis halleri					g17448		g17448
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Arabidopsis lyrata					scaffold_104436.1		scaffold_104436.1
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Arabidopsis thaliana					AT1G48270		AT1G48270
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Brassica juncea					BjuA06g38010S		BjuA06g38010S
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Brassica juncea					BjuB04g02670S		BjuB04g02670S
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Brassica juncea					BjuB04g18240S		BjuB04g18240S
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Brassica napus					BnaA06g03910D GSBRNA2T00156344001		BnaA06g03910D GSBRNA2T00156344001
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Brassica napus					BnaC06g01880D GSBRNA2T00076319001		BnaC06g01880D GSBRNA2T00076319001
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Brassica oleracea					Bo6g012150		Bo6g012150
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Brassica rapa					A06p005380.1_BraROA		A06p005380.1_BraROA
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Camelina sativa					Csa17g078870		Csa17g078870
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Camelina sativa					Csa03g053050		Csa03g053050
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Camelina sativa					Csa14g054290		Csa14g054290
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Beta vulgaris					BVRB_2g045400		BVRB_2g045400
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Chenopodium quinoa					AUR62020280		AUR62020280
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Cucumis melo					MELO3C016921.2		MELO3C016921.2
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Cucumis sativus					Csa_4G648570		Csa_4G648570
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Actinidia chinensis					CEY00_Acc22712		CEY00_Acc22712
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Cajanus cajan					C.cajan_42135		C.cajan_42135
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Glycine max					GLYMA_17G219300		GLYMA_17G219300
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Glycine max					GLYMA_14G107200		GLYMA_14G107200
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Medicago truncatula					gene477		gene477
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Phaseolus vulgaris					18640363		18640363
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Quercus suber					gene-CFP56_43418		gene-CFP56_43418
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Quercus suber					gene-CFP56_75750		gene-CFP56_75750
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Olea europaea					OE9A097862		OE9A097862
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Olea europaea					OE9A071792		OE9A071792
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Manihot esculenta					Manes.03G212200.v8.1		Manes.03G212200.v8.1
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Linum usitatissimum					Lus10017120		Lus10017120
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Populus trichocarpa					Potri.008G206000.v4.1		Potri.008G206000.v4.1
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Ricinus communis					XM_002519287.4		XM_002519287.4
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Theobroma cacao					TCM_021504		TCM_021504
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Gossypium raimondii					B456_005G073100		B456_005G073100
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Corymbia citriodora					gene-BT93_D1505		gene-BT93_D1505
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Eucalyptus grandis					EUGRSUZ_C00739		EUGRSUZ_C00739
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Cannabis sativa					evm.TU.01.1136		evm.TU.01.1136
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Prunus persica					ONI33053		ONI33053
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Citrus clementina					CICLE_v10005468mg		CICLE_v10005468mg
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Coffea canephora					GSCOC_T00038439001		GSCOC_T00038439001
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Nicotiana attenuata					A4A49_33146		A4A49_33146
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Solanum tuberosum					PGSC0003DMG402012996		PGSC0003DMG402012996
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Solanum tuberosum					PGSC0003DMG401012996		PGSC0003DMG401012996
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Solanum lycopersicum					101263536		101263536
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Vitis vinifera					Vitvi04g00181		Vitvi04g00181
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Dioscorea rotundata					DRNTG_19123.1		DRNTG_19123.1
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Aegilops tauschii					AET7Gv20427100		AET7Gv20427100
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Ananas comosus					Aco023685.1.path1		Aco023685.1.path1
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Brachypodium distachyon					BRADI_1g46520v3		BRADI_1g46520v3
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Hordeum vulgare					HORVU.MOREX.r3.7HG0662190.1		HORVU.MOREX.r3.7HG0662190.1
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Leersia perrieri					LPERR06G05870.1		LPERR06G05870.1
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Oryza sativa subsp Japonica					Os06g0199800		Os06g0199800
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Sorghum bicolor					SORBI_3010G074900		SORBI_3010G074900
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Triticum aestivum					TraesCS7D02G164100		TraesCS7D02G164100
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Triticum aestivum					TraesCS7B02G067700		TraesCS7B02G067700
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Triticum aestivum					TraesCS7A02G162400		TraesCS7A02G162400
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Triticum urartu					TuG1812G0700001734.01		TuG1812G0700001734.01
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Zea mays					Zm00001eb278600		Zm00001eb278600
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Musa acuminata					Ma08_g24320		Ma08_g24320
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Cryptomeria japonica					LOC131061481		LOC131061481
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Sequoiadendron giganteum					SEGI_23264		SEGI_23264
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Sequoiadendron giganteum					SEGI_18851		SEGI_18851
+sequence	Fernandez-Figueroa et al. 2026	GCR1 ortholog	Picea glauca					BT110964.1		BT110964.1

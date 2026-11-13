@@ -1,0 +1,15 @@
+study	genome_as_reported	id_contains	our_genome	evidence
+Krishnan et al. 2012	Magnaporthe grisea		Pyricularia oryzae 70-15	their receptors are 70-15 gene models (MGG_ locus tags, MAGO7 entry names); NCBI files "Magnaporthe grisea" under Pyricularia grisea, a different species we also have
+Krishnan et al. 2012	Rhizopus oryzae		Rhizopus delemar RA 99-880	their receptors are RA 99-880 gene models (RO3G_ locus tags), a strain now in R. delemar; NCBI files "Rhizopus oryzae" under R. arrhizus, a different species we also have
+Krishnan et al. 2012	Ashbya gossypii		Eremothecium gossypii ATCC 10895	their receptors carry ASHGO accessions of our E. gossypii; the old name is not in the NCBI taxonomy files on disk
+Krishnan et al. 2012	Candida guillermondii		Meyerozyma guilliermondii ATCC 6260	spelling of C. guilliermondii (now Meyerozyma); their receptors carry PICGU accessions and PGUG locus tags of our genome
+Krishnan et al. 2012	Ajellomyces capsulata		Histoplasma capsulatum	their receptors carry AJECG and AJECH accessions (G186AR, H143) of our H. capsulatum; the NAm1 receptors (AJECN, now H. mississippiense) are placed by their accessions
+Krishnan et al. 2012	Ajellomyces dermatitidis	_AJEDR	Blastomyces dermatitidis ER-3	receptors of strain ER-3 (AJEDR entry names) stay with ER-3, which is not in our set
+Krishnan et al. 2012	Ajellomyces dermatitidis		Blastomyces gilchristii SLH14081	they list receptors of strain SLH14081 (AJEDS entry names; now B. gilchristii) in every family compared (STE2 1, STE3 1, Git3 2, cAMP 1), so they searched this genome
+Krishnan et al. 2012	Pichia pastoris		Komagataella phaffii GS115	their receptors carry PICPG accessions of our K. phaffii GS115; NCBI files "Pichia pastoris" under K. pastoris, which we do not have
+Krishnan et al. 2012	Verticillium albo-atrum		Verticillium alfalfae VaMs.102	their receptors carry VERA1 accessions of strain VaMs.102, now V. alfalfae; NCBI keeps V. albo-atrum as a separate species
+Krishnan et al. 2012	Verticillium albo		Verticillium alfalfae VaMs.102	as above (Table S1 spelling)
+Liu et al. 2026	Peniophora sp.		Peniophora sp. CONT	116 of their 126 receptors (portal Ricme1) are identical to proteins of our Peniophora sp. CONT
+Liu et al. 2026	Heterobasidion annosum		Heterobasidion irregulare	portal Hetan2 is strain TC 32-1 (Olson et al. 2012, as cited), now H. irregulare, which is our genome; 5 of their 9 receptors are identical to ours
+Liu et al. 2026	Pichia pastoris		Komagataella phaffii	portal Picpa1; the P. pastoris strains with genomes are K. phaffii; 4 of their 9 receptors are identical to our K. phaffii GS115
+Liu et al. 2026	Enterocytozoon hepatopenaei TH1		Ecytonucleospora hepatopenaei	the species was renamed Ecytonucleospora hepatopenaei, which is our genome; the old name is not in the NCBI taxonomy files on disk (no receptors listed)

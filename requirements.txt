@@ -2,8 +2,12 @@ biopython
 ete3
 numpy
 pandas
+matplotlib
 plotly
+openpyxl
+xlrd           # .xls supplements read in 05_literature_comparison
+pypdf          # PDF supplements read in 05_literature_comparison
+python-docx    # Word supplements (05) and the supplementary-figure document
 
-# Optional: only needed by phylogeny/MSA_to_svg_and_pdf.py
-reportlab
-svglib
+# Only needed by 11_structure_superposition (open-source PyMOL)
+# pymol-open-source

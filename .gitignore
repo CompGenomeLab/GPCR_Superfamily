@@ -16,26 +16,17 @@ tmp/
 *.index
 *.lookup
 
-# Large/generated analysis products (distributed through Zenodo)
-search_results/
-results/
-families/
-gene_lists/
-cluster_files/
-accession_txt/
-reference_data/
-public/mappings/
-*.m8
-*.tree
-*.html
-*.raxml.*
+# The data archive is distributed through Zenodo, never committed
+zenodo_data/
 
-# Verified primary phylogeny and extended-alignment outputs are intentionally included.
-!code_and_data/phylogeny/data/trees/
-!code_and_data/phylogeny/data/trees/**
-!code_and_data/superfamily_alignment/data/trees/
-!code_and_data/superfamily_alignment/data/trees/**
+# The studies' supplementary files of the literature comparison are not distributed (copyright); only our
+# own files and the parsed tables are. Downloaded copies placed in literature/<study>/ stay local.
+code_and_data/05_literature_comparison/literature/*/
+!code_and_data/05_literature_comparison/literature/parsed/
 
 # OS/editor files
 .DS_Store
 Thumbs.db
+
+# local build output of the website data (09_superfamily_phylogeny/website)
+code_and_data/09_superfamily_phylogeny/website/build/
