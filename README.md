@@ -1,13 +1,14 @@
-# GPCR Superfamily Is Defined by Shared Motifs
+# Shared motifs trace the common ancestry of the GPCR superfamily across eukaryotes
 
 Code for the identification of GPCR families across eukaryotes, their filtering and assignment, the
 comparison with published classifications, the inference of family origins, the superfamily trees,
 the shared sequence motifs and their structural test.
 
 The data every stage reads and writes are in the accompanying Zenodo archive,
-[doi:10.5281/zenodo.21573037](https://doi.org/10.5281/zenodo.21573037). Interactive versions of the
-figures are on [gpcrevolution.org](https://gpcrevolution.org): the phyletic distribution, the
-superfamily trees and the superfamily logo.
+[doi:10.5281/zenodo.21573036](https://doi.org/10.5281/zenodo.21573036) (this DOI always resolves to the
+latest version; this code goes with version 2, November 2026). Interactive versions of the figures are on
+[gpcrevolution.org](https://gpcrevolution.org): the family taxonomic distribution, the superfamily trees
+and the superfamily logo.
 
 ## Layout
 
